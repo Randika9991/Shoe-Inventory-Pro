@@ -1,116 +1,77 @@
 const CUS_NAME_REGEX = /^[A-Za-z ]{5,}$/;
 const CUS_ADDRESS_REGEX = /^[A-Za-z0-9 ]{5,}$/;
-const CUS_STATE_REGEX = /^[A-Za-z0-9 ]{5,}$/;
+const CUS_ADDRESS_NO_REGEX = /^(?:no\.|No\.)\d+$/i
 const CUS_EMAIL_REGEX =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const CUS_PHONE_REGEX = /^\d{10}$/;
 
+let cusValidation = [];
+cusValidation.push({field:$("#cName"),regEx: CUS_NAME_REGEX});
+cusValidation.push({field:$("#cEmail"),regEx: CUS_EMAIL_REGEX});
+cusValidation.push({field:$("#cContact"),regEx: CUS_PHONE_REGEX});
+cusValidation.push({field:$("#cAddressLine"),regEx: CUS_ADDRESS_NO_REGEX});
+cusValidation.push({field:$("#cStateCity"),regEx: CUS_ADDRESS_REGEX});
 
+setCustomerBtn();
 
-let cValidation=[];
-cValidation.push({field:$("#cName"),regEx: CUS_NAME_REGEX});
-cValidation.push({field:$("#cAddressLine"),regEx: CUS_ADDRESS_REGEX});
-cValidation.push({field:$("#cStateCity"),regEx: CUS_STATE_REGEX});
-cValidation.push({field:$("#cEmail"),regEx: CUS_EMAIL_REGEX});
-cValidation.push({field:$("#cContact"),regEx:CUS_PHONE_REGEX});
-
-function clearCustomerInputFields() {
-    $("#cName").val("");
-    $("#cName").css({"border": "none "});
-
-    $("#cAddressLine").val("");
-    $("#cAddressLine").css({"border": "none "});
-
-    $("#cStateCity").val("");
-    $("#cStateCity").css({"border": "none "});
-
-    $("#cEmail").val("");
-    $("#cEmail").css({"border": "none "});
-
-    $("#cContact").val("")
-    $("#cContact").css({"border": "none "});
-
-    $('#cGender').prop('selectedIndex', 0);
-
-    $("#cLoyaltyDate").val("")
-    $("#cDob").val("")
-
-    setBtn();
-}
-
-setBtn();
-
-$("#cName,#cAddressLine,#cStateCity,#cEmail,#cContact").on("keyup",function(e){
-
-    let indexNo = cValidation.indexOf(cValidation.find((c) => c.field.attr("id") === e.target.id));
-    console.log(indexNo);
+$("#cName,#cEmail,#cContact,#cAddressLine,#cStateCity").on("keydown keyup", function (e) {
+    let indexNo = cusValidation.indexOf(cusValidation.find((c) => c.field.attr("id") === e.target.id));
 
     if(e.key==="Tab"){
         e.preventDefault();
     }
-    checkValidations(cValidation[indexNo]);
-    setBtn();
-});
+    checkValidations(cusValidation[indexNo]);
+    setCustomerBtn()
+})
 
 function checkValidations(object) {
     if (object.regEx.test(object.field.val())) {
-        setBorder(true, object)
+        setCustomerBorder(true, object);
         return true;
     }
-    setBorder(false, object)
+    setCustomerBorder(false, object);
     return false;
 }
 
-function setBorder(bol, ob) {
+function checkAllCustomers() {
+    for (let i = 0; i < cusValidation.length; i++) {
+        if (!checkValidations(cusValidation[i])){
+            return false;
+        }
 
-    if (!bol && ob.field.val().length >= 1) {
-        ob.field.css({
-            "border": "1px solid #fc424a",
-        });
-
-    } else if(!bol && ob.field.val().length === 0){
-        ob.field.css({
-            "border": "none !important",
-        });
-    }
-    else {
-        ob.field.css({
-            "border": "1px solid #00d25b",
-        });
-
-    }
-}
-
-function checkAll() {
-    for (let i = 0; i < cValidation.length; i++) {
-        if (!checkValidations(cValidation[i])) return false;
     }
     return true;
 }
 
+function setCustomerBorder(bol, ob) {
+    if (!bol) {
+        if (ob.field.val().length >= 1) {
+            ob.field.css("border", "2px solid red");
+        } else {
+            ob.field.css("border", "1px solid rgb(206, 212, 218)");
+        }
+    } else {
+        if (ob.field.val().length >= 1) {
+            ob.field.css("border", "1px solid rgb(206, 212, 218)");
+        } else {
+            ob.field.css("border", "1px solid rgb(206, 212, 218)");
 
+            //ob.field.css("border", "var(--bs-border-width) solid var(--bs-border-color)");
+        }
+    }
+}
 
-function setBtn() {
+function setCustomerBtn() {
     // $("#CustomerDeleteBtn").prop("disabled", true);
     // $("#CustomerUpdateBtn").prop("disabled", true);
 
-    if (checkAll()) {
-        $("#cSaveBtn").prop("disabled", false);
-        $("#cUpdateBtn").prop("disabled", false);
-        $("#cDeleteBtn").prop("disabled", false);
+    if (checkAllCustomers()) {
+        $("#btnSaveCustomer").prop("disabled", false);
+        $("#btnUpdate").prop("disabled", false);
+        $("#btnCusDelete").prop("disabled", false);
 
-    }else{
-        $("#cSaveBtn").prop("disabled", true);
-        $("#cUpdateBtn").prop("disabled", true);
-        $("#cDeleteBtn").prop("disabled", true);
+    } else {
+        $("#btnSaveCustomer").prop("disabled", true);
+        $("#btnUpdate").prop("disabled", true);
+        $("#btnCusDelete").prop("disabled", true);
     }
-
-    // let id = $("#cId").val();
-    // if (searchCustomer(id) === undefined) {
-    //     $("#CustomerDeleteBtn").prop("disabled", true);
-    //     $("#CustomerUpdateBtn").prop("disabled", true);
-    // } else {
-    //     $("#CustomerDeleteBtn").prop("disabled", false);
-    //     $("#CustomerUpdateBtn").prop("disabled", false);
-    // }
-
 }

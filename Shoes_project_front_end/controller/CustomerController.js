@@ -1,20 +1,6 @@
 $(document).ready(function () {
     loadNextCustomerId();
     getAllCustomers();
-
-    // $("#btnSaveCustomer").click(function () {
-    //     if (checkAll()) {
-    //         saveCustomer();
-    //     } else {
-    //         alert("Error");
-    //     }
-    // });
-    //
-    // // Other event handlers...
-    //
-    // $('#btnCustomerClear').click(function () {
-    //     clearCustomerInputFields();
-    // });
 });
 
 function loadNextCustomerId(){
@@ -85,7 +71,11 @@ function getAllCustomers(){
 
 // save side
 $("#btnSaveCustomer").click(function (){
-    saveCustomer();
+    if (checkAllCustomers()) {
+            saveCustomer();
+    } else {
+        alert("Please check the input fields!")
+    }
 })
 function saveCustomer(){
     let id=$("#cId").val();
@@ -125,10 +115,9 @@ function saveCustomer(){
         success:function (response) {
             console.log(response)
             getAllCustomers();
-            clearCustomerInputFields();
-            $("#cSaveBtn").prop("disabled", true);
-            $("#cUpdateBtn").prop("disabled", true);
-            $("#cDeleteBtn").prop("disabled", true);
+            $("#btnSaveCustomer").prop("disabled", true);
+            $("#btnUpdate").prop("disabled", true);
+            $("#btnCusDelete").prop("disabled", true);
         },
         error:function (xhr,status,err) {
             console.log(err)
@@ -145,8 +134,6 @@ $("#btnUpdate").click(function (){
     updateCustomer()
 })
 function updateCustomer() {
-
-
     let code=$("#cId").val();
     let name=$("#cName").val();
     let email=$("#cEmail").val();
@@ -182,12 +169,12 @@ function updateCustomer() {
         }),
 
         success:function (response){
-            console.log(response)
+            alert("Customer updated successfully!")
             getAllCustomers();
-            clearCustomerInputFields();
-            $("#cSaveBtn").prop("disabled", true);
-            $("#cUpdateBtn").prop("disabled", true);
-            $("#cDeleteBtn").prop("disabled", true);
+            // clearCustomerInputFields();
+            $("#btnSaveCustomer").prop("disabled", true);
+            $("#btnUpdate").prop("disabled", true);
+            $("#btnCusDelete").prop("disabled", true);
         },
 
         error:function (xhr,status,err,response) {
@@ -197,7 +184,6 @@ function updateCustomer() {
                 alert("This customer is not in system.Try with another!!")
             }
         }
-
     })
 }
 
@@ -216,9 +202,9 @@ $('#customTbl').on('click', 'tr', function (){
     var loyaltyPoints = $(this).find('td:eq(11)').text();
     var recentDate = $(this).find('td:eq(12)').text();
 
-    $("#cSaveBtn").prop("disabled", false);
-    $("#cUpdateBtn").prop("disabled", false);
-    $("#cDeleteBtn").prop("disabled", false);
+    $("#btnSaveCustomer").prop("disabled", false);
+    $("#btnUpdate").prop("disabled", false);
+    $("#btnCusDelete").prop("disabled", false);
 
     $("#cId").val(id);
     $("#cName").val(name);
@@ -294,6 +280,22 @@ $("#searchInput").on("input", function (){
             console.error("AJAX request failed:", status, error);
         }
     });
+});
+
+$("#btnCustomerClear").on("click", function () {
+    loadNextCustomerId();
+    $("#cId").val("");
+    $("#cName").val("");
+    $("#cEmail").val("");
+    $("#cContact").val("");
+    $("#cAddressLine").val("");
+    $("#cStateCity").val("");
+    $("#cDob").val("");
+    $("#cLoyaltyDate").val("");
+    $("#cGender").val("");
+    $("#cLevel").val("");
+    $("#cLoyaltyPoint").val("");
+    $("#cRecentDate").val("");
 });
 
 

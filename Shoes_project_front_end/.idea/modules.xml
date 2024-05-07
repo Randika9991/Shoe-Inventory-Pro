@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/InMemoryPOS.iml" filepath="$PROJECT_DIR$/.idea/InMemoryPOS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/shoe_project_system.iml" filepath="$PROJECT_DIR$/.idea/shoe_project_system.iml" />
     </modules>
   </component>
 </project>

@@ -1,20 +1,6 @@
 $(document).ready(function () {
     loadNextEmployeeId();
     getAllEmployees()
-
-    // $("#btnSaveCustomer").click(function () {
-    //     if (checkAll()) {
-    //         saveCustomer();
-    //     } else {
-    //         alert("Error");
-    //     }
-    // });
-    //
-    // // Other event handlers...
-    //
-    // $('#btnCustomerClear').click(function () {
-    //     clearCustomerInputFields();
-    // });
 });
 
 function loadNextEmployeeId(){
@@ -80,7 +66,11 @@ function loadEmployeeDataInTable(response) {
 
 // save
 $("#eSaveBtn").click(function (){
-    saveEmployee();
+    if (checkAllEmployees()) {
+            saveEmployee();
+    } else {
+        alert("Please check the input fields!")
+    }
 })
 
 function saveEmployee(){
@@ -100,9 +90,6 @@ function saveEmployee(){
     let gender=$("#eGender").val();
     let branch=$("#eBranch").val();
     let proPicInput=$('#eImage').prop('files')[0];
-
-    console.log(proPicInput)
-    console.log(dob)
 
     var formData = new FormData();
     formData.append('code', code);
@@ -149,7 +136,6 @@ function saveEmployee(){
             }
         }
     })
-
 }
 
 $("#eUpdateBtn").click(function () {
@@ -211,8 +197,7 @@ function updateEmployee() {
         data: formData,
 
         success: function (response) {
-            console.log("Success:", response);
-            // Handle success response
+            alert("Employee update Success")
             getAllEmployees();
             $("#eSaveBtn").prop("disabled", true);
             $("#eUpdateBtn").prop("disabled", true);
@@ -296,12 +281,9 @@ $('#employeeTbl').on('click', 'tr', function (){
     var address = $(this).find('td:eq(15)').text();
     var state = $(this).find('td:eq(16)').text();
 
-
-
     $("#eSaveBtn").prop("disabled", false);
     $("#eUpdateBtn").prop("disabled", false);
     $("#eDeleteBtn").prop("disabled", false);
-
 
     console.log("1 "+id)
     console.log("2 "+proPic)
@@ -361,6 +343,26 @@ $('#employeeTbl').on('click', 'tr', function (){
     $("#eHomeNumber").val(guardianContact );
     $("#eState").val(state );
 })
+
+$("#eClearBtn").on("click", function () {
+    $("#eId").val("");
+    $("#eName").val("");
+    $("#eEmail").val("");
+    $("#edOb").val("");
+    $("#eGender").val("");
+    $("#eJoinDate").val("");
+    $("#eROle").val("");
+    $("#eStatus").val("");
+    $("#eDesignation").val("");
+    $("#eAddress").val("");
+    $("#ePhone").val("");
+    $("#eBranch").val("");
+    $("#eGuardian").val("");
+    $("#eHomeNumber").val("");
+    $("#eState").val("");
+})
+
+
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);

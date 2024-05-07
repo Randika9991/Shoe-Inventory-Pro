@@ -12,6 +12,7 @@ function initiateUI() {
     $("#lnkItem").css("display", "none");
     $("#lnkOrders").css("display", "none");
     $("#lnkEmployee").css("display", "none");
+    $("#lnkSupplier").css("display", "none");
 
     // setView($("#navigatoon"));
 }
@@ -37,9 +38,12 @@ function saveLastView(clickedID) {
             localStorage.setItem("view", "SIGNUP");
             break;
 
-            //change
         case "employeeContent":
             localStorage.setItem("view", "EMPLOYEE");
+            break;
+
+        case "supplierContent":
+            localStorage.setItem("view", "SUPPLIER");
             break;
     }
 }
@@ -65,10 +69,13 @@ function setTheLastView() {
         case "SIGNUP":
             setView($("#singUpPage"));
             break;
-        //change
 
         case "EMPLOYEE":
             setView($("#employeeContent"));
+            break;
+
+        case "SUPPLIER":
+            setView($("#supplierContent"));
             break;
 
         default:
@@ -79,7 +86,7 @@ function setTheLastView() {
 }
 
 function clearAll() {
-    $("#dashboardContent,#customerContent,#itemContent,#orderContent,#loginPage,#singUpPage,#employeeContent").css('display', 'none');
+    $("#dashboardContent,#customerContent,#itemContent,#orderContent,#loginPage,#singUpPage,#employeeContent,#supplierContent").css('display', 'none');
 }
 
 function setView(viewOb) {
@@ -121,8 +128,8 @@ $("#loginSubmit").click(function () {
     $("#lnkItem").css("display", "block");
     $("#lnkOrders").css("display", "block");
 
-    // change
     $("#lnkEmployee").css("display", "block");
+    $("#lnkSupplier").css("display", "block");
 });
 
 $("#SignupSubmit").click(function () {
@@ -131,17 +138,13 @@ $("#SignupSubmit").click(function () {
     $("#lnkItem").css("display", "block");
     $("#lnkOrders").css("display", "block");
 
-    // change
     $("#lnkEmployee").css("display", "block");
+    $("#lnkSupplier").css("display", "block");
 });
-
-
-// change
 
 $("#lnkEmployee").click(function () {
     setView($("#employeeContent"));
 });
-
 
 $("#loginClose").click(function () {
     setView($("#dashboardContent"));
@@ -149,4 +152,26 @@ $("#loginClose").click(function () {
 
 $("#singUpClose").click(function () {
     setView($("#dashboardContent"));
+});
+
+$("#lnkSupplier").click(function () {
+    setView($("#supplierContent"));
+});
+
+// New event for item link
+$("#lnkItem").click(function () {
+    setView($("#itemContent"));
+});
+
+// Additional events for managing item content
+$("#addItemButton").click(function () {
+    // Code to handle adding a new item
+});
+
+$("#editItemButton").click(function () {
+    // Code to handle editing an existing item
+});
+
+$("#deleteItemButton").click(function () {
+    // Code to handle deleting an existing item
 });

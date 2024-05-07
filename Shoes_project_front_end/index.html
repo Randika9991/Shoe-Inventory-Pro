@@ -35,6 +35,9 @@
             <a class="nav-link" id="lnkEmployee" href="#" style="color: white" >Employee</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" id="lnkSupplier" href="#" style="color: white" >Supplier</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" id="lnkItem" href="#" style="color: white">Item</a>
           </li>
           <li class="nav-item">
@@ -218,7 +221,6 @@
                     </select>
                   </div>
 
-
                   <div class="mb-3">
                     <label for="cDob" class="col-sm-3 col-form-label">Date of Birth :</label>
                       <input type="date" class="form-control" id="cDob" name="dob" style="background-color: #283640;color: white">
@@ -297,7 +299,6 @@
       </div>
     </nav>
   </div>
-
                   <!--Table-->
   <div class="modal-footer mb-3" style=" position: relative;">
     <table class="table table-bordered table-hover table-striped-columns">
@@ -514,67 +515,280 @@
   </div>
 </main>
 
+<!-- Supplier main  ///////////////////////////////////////////////////////////////////////////////////////////// -->
+<main class="container-fluid" id="supplierContent">
+  <div class="container-fluid mt-2">
+    <div class="row border bg-r">
+      <div class="p-3 text-primary-emphasis border border-primary-subtle rounded-3" style="background-color: #2C3A47">
+        <div>
+          <div class="row" >
+            <div class="col-md-12 col-lg-6 col-xl-6 grid-margin stretch-card"  style="color: white">
+              <div class="card" style="background-color: #2C3A47; width: 100%; height: 100% ;color: wheat;">
+                <div>
+                  <div class="mb-3">
+                    <label for="SupCode" class="col-sm-3 col-form-label">Code</label>
+                      <input disabled type="text" class="form-control" id="SupCode" style="background-color: #283640;color: white">
+                  </div>
+                  <div class="mb-3">
+                    <label for="txtSupName" class="col-sm-3 col-form-label">Name</label>
+                      <input type="text" class="form-control" id="txtSupName" style="background-color: #283640;color: white">
+                  </div>
+                  <div class="mb-3">
+                    <label for="txtSupEmail" class="col-sm-3 col-form-label">Email</label>
+                      <input type="email" class="form-control" id="txtSupEmail" style="background-color: #283640;color: white">
+                  </div>
+                  <div class="mb-3">
+                    <label for="cmbSupCategory" class="col-sm-3 col-form-label">Category</label>
+                      <select id="cmbSupCategory" class="form-select" aria-label="Default select example" style="background-color: #283640;color: white">
+                        <option value="Local">Local</option>
+                        <option value="International">International</option>
+                      </select>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<!-- Item main  ///////////////////////////////////////////////////////////////////////////////////////////// -->
-  <main class="container-fluid" id="itemContent">
-    <div class="container-fluid mt-2">
-      <div class="row border bg-r">
-        <div class="p-3 text-primary-emphasis border border-primary-subtle rounded-3" style="background-color: #2C3A47">
-          <div>
-            <div class="modal-footer" >
-              <nav style="width: 250px;" >
-                <div class="container-fluid " >
-                  <form class="d-flex " role="search" >
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="background-color: #555e6a; color: white">
-                    <button class="btn btn-outline-success " fdprocessedid="prr3r4" type="submit">Search</button>
+            <div class="col-md-12 col-lg-6 col-xl-6 grid-margin stretch-card">
+              <div class="card" style="background-color: #2C3A47; width: 100%; height: 100% ;color: wheat;">
+                <div>
+                  <form class="col-md-12 col-lg-6 col-xl-6 grid-margin stretch-card" style="width: 100%; ">
+                    <div class="mb-3">
+                      <label for="txtSupAddLine01" class="col-sm-3 col-form-label">Address No.</label>
+                        <input type="text" class="form-control" id="txtSupAddLine01" style="background-color: #283640;color: white">
+                    </div>
+                    <div class="mb-3">
+                      <label for="txtSupAddLine02" class="col-sm-3 col-form-label">Address</label>
+                        <input type="email" class="form-control" id="txtSupAddLine02" style="background-color: #283640;color: white">
+                    </div>
+                    <div class="mb-3">
+                      <label for="txtSupMobile" class="col-sm-3 col-form-label">Mobile No.</label>
+                        <input type="number" class="form-control" id="txtSupMobile" style="background-color: #283640;color: white">
+                    </div>
+                    <div class="mb-3">
+                      <label for="txtSupLandLine" class="col-sm-3 col-form-label">LandLine No.</label>
+                        <input type="number" class="form-control" id="txtSupLandLine" style="background-color: #283640;color: white">
+                    </div>
                   </form>
                 </div>
-              </nav>
+              </div>
             </div>
-            <div class="mb-3">
-              <label class="form-label" style="color: white">Item Id</label>
-              <input disabled type="text" class="form-control" id="ItemtxtID" placeholder="Item Id" style="background-color: #555e6a; color: white">
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" id="btnSaveSupplier">Save</button>
+            <button class="btn btn-danger" id="btnSupplierDelete">Delete</button>
+            <button class="btn btn-warning" id="btnSupplierUpdate">Update</button>
+            <button class="btn btn-danger" id="btnSupplierClear">Clear All</button>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section id="supplier-search-content" class="col-12 col-sm-8 my-2">
+    <section id="supplier-search">
+      <form class="row gx-3 gy-2 align-items-center">
+        <div class="col-sm-3">
+          <label class="visually-hidden">Preference</label>
+          <select class="form-select" id="cmbSupplierSearch">
+            <option value="code">code</option>
+            <option value="Name">Name</option>
+          </select>
+        </div>
+        <div class="w-50 col-sm-3">
+          <label class="visually-hidden" >Name</label>
+          <input type="text" class="form-control" id="txtSupplierSearch" placeholder="Search Supplier">
+        </div>
+        <div class="col-auto">
+          <button id="btnSupplierSearch" type="button" class="btn btn-outline-primary">Search</button>
+        </div>
+        <div class="col-auto">
+          <button id="searchbtnSupplierClear" type="button" class="btn btn-outline-warning">Clear</button>
+        </div>
+      </form>
+    </section>
+  </section>
+  <!--Table-->
+
+  <div class="modal-footer mb-3" style=" position: relative;">
+    <table class="table table-bordered table-hover table-striped-columns">
+      <thead>
+      <tr class="table mt-5 p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+        <th class="bg-primary-subtle">Code</th>
+        <th  class="bg-primary-subtle">Name</th>
+        <th  class="bg-primary-subtle">Email</th>
+        <th  class="bg-primary-subtle">Category</th>
+        <th class="bg-primary-subtle">Address</th>
+        <th  class="bg-primary-subtle">Mobile No.</th>
+        <th class="bg-primary-subtle">LandLine No.</th>
+      </tr>
+      </thead>
+      <tbody id="SupplierTbl">
+
+      </tbody>
+    </table>
+  </div>
+</main>
+
+
+<!-- Item main  ///////////////////////////////////////////////////////////////////////////////////////////// -->
+<main class="container-fluid" id="itemContent">
+  <div class="container-fluid mt-2">
+    <div class="row border bg-r">
+      <div class="p-3 text-primary-emphasis border border-primary-subtle rounded-3" style="background-color: #2C3A47">
+        <div>
+          <div class="row">
+            <div class="col-md-12 col-lg-6 col-xl-6 grid-margin stretch-card" style="color: white">
+              <div class="card" style="background-color: #2C3A47; width: 100%; height: 100%; color: wheat;">
+                <div class="mb-3">
+                  <label for="txtItemCode" class="col-sm-3 col-form-label">Code</label>
+                  <input type="text" class="form-control" id="txtItemCode" style="background-color: #283640;color: white">
+                </div>
+                <div class="mb-3">
+                  <label for="txtItemDesc" class="col-sm-3 col-form-label">Description</label>
+                  <input type="text" class="form-control" id="txtItemDesc" style="background-color: #283640;color: white">
+                </div>
+                <div class="mb-3">
+                  <label for="txtItemCategory" class="col-sm-3 col-form-label">Category</label>
+                  <input type="text" class="form-control" id="txtItemCategory" style="background-color: #283640;color: white">
+                </div>
+                <div class="row mb-3 col-12">
+                  <label class="col-sm-3 col-form-label">Sizes :</label>
+                  <div class="row col-sm-9">
+                    <div class="row">
+                      <label for="txtItemSize6" class="col-sm-3 col-form-label">Size-6</label>
+                      <input type="number" class="form-control" id="txtItemSize6" style="background-color: #283640;color: white">
+                    </div>
+                    <div class="row mt-2">
+                      <label for="txtItemSize7" class="col-sm-3 col-form-label">Size-7</label>
+                      <input type="number" class="form-control" id="txtItemSize7" style="background-color: #283640;color: white" >
+                    </div>
+                    <div class="row mt-2">
+                      <label for="txtItemSize8" class="col-sm-3 col-form-label">Size-8</label>
+                      <input type="number" class="form-control" id="txtItemSize8" style="background-color: #283640;color: white">
+                    </div>
+                    <div class="row mt-2">
+                      <label for="txtItemSize9" class="col-sm-3 col-form-label">Size-9</label>
+                      <input type="number" class="form-control" id="txtItemSize9" style="background-color: #283640;color: white">
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="cmbItemSupCode" class="col-sm-3 col-form-label">Supplier Code</label>
+                  <select id="cmbItemSupCode" class="form-select" aria-label="Default select example" style="background-color: #283640;color: white"></select>
+                </div>
+                <div class="mb-3">
+                  <label for="txtItemSupName" class="col-sm-3 col-form-label">Supplier Name</label>
+                  <input type="text" class="form-control" id="txtItemSupName" style="background-color: #283640;color: white">
+                </div>
+              </div>
             </div>
-            <div class="mb-3">
-              <label class="form-label" style="color: white">Item Description</label>
-              <input type="text" class="form-control" id="ItemtxtDescription" placeholder="Item description" style="background-color: #555e6a; color: white">
+
+            <div class="col-md-12 col-lg-6 col-xl-6 grid-margin stretch-card">
+              <div class="card" style="background-color: #2C3A47; width: 100%; height: 100%; color: wheat;">
+                <div class="col-md-12 col-lg-6 col-xl-6 grid-margin stretch-card" style="width: 100%;">
+
+                  <div class="mb-3">
+                    <label for="txtItemProfilePic" class="col-sm-3 col-form-label">Profile Pic</label>
+                    <div class="row">
+                      <div class="col-sm-9"> <!-- Adjusted width for input field -->
+                        <input class="form-control" type="file" name="img[]" class="file-upload-default" id="txtItemProfilePic" style="background-color: #283640;color: white">
+                      </div>
+                      <div class="col-sm-3"> <!-- Adjusted width for image -->
+                          <img src="assets/bac/Screenshot%202024-05-07%20211154.png" alt="Item Image" style="max-width: 75px; max-height: 75px;" id="showItemImage" s>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="txtItemUnitPriceSale" class="col-sm-3 col-form-label">Unit Price(Sale)</label>
+                    <input type="number" class="form-control" id="txtItemUnitPriceSale" style="background-color: #283640;color: white">
+                  </div>
+                  <div class="mb-3">
+                    <label for="txtItemUnitPriceBuy" class="col-sm-3 col-form-label">Unit Price(Buy)</label>
+                    <input type="number" class="form-control" id="txtItemUnitPriceBuy" style="background-color: #283640;color: white">
+                  </div>
+                  <div class="mb-3">
+                    <label for="txtItemProfit" class="col-sm-3 col-form-label">Profit</label>
+                    <input type="number" class="form-control" id="txtItemProfit" style="background-color: #283640;color: white">
+                  </div>
+                  <div class="mb-3">
+                    <label for="txtItemProfitMargin" class="col-sm-3 col-form-label">Profit Margin</label>
+                    <input type="number" class="form-control" id="txtItemProfitMargin" style="background-color: #283640;color: white">
+                  </div>
+                  <div class="mb-3">
+                    <label for="txtItemStatus" class="col-sm-3 col-form-label">Status</label>
+                    <input type="text" class="form-control" id="txtItemStatus" style="background-color: #283640;color: white">
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="mb-3">
-              <label class="form-label" style="color: white">Item Price</label>
-              <input type="text" class="form-control" id="ItemtxtPrice" placeholder="Item Price" style="background-color: #555e6a; color: white">
-            </div>
-            <div class="mb-3">
-              <label class="form-label" style="color: white">Item Quantity</label>
-              <input type="text" class="form-control" id="ItemtxtQuantity" placeholder="Item Quantity" style="background-color: #555e6a; color: white">
-            </div>
-            <div class="modal-footer">
-              <button class="btn btn-success" id="btnSaveItem">Save</button>
-              <button class="btn btn-danger" id="btnItemDelete">Delete</button>
-              <button class="btn btn-warning" id="btnItemUpdate">Update</button>
-              <button class="btn btn-danger" id="btnItemClear">Clear All</button>
-            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button class="btn btn-success" id="btnSaveItem">Save</button>
+            <button class="btn btn-danger" id="btnItemDelete">Delete</button>
+            <button class="btn btn-warning" id="btnItemUpdate">Update</button>
+            <button class="btn btn-danger" id="btnItemClear">Clear All</button>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!--Table-->
-    <div class="table-responsive  mt-5 " style="height: 170px; bottom:35px; position: relative;">
-      <table class="table table-bordered table-hover table-striped-columns " style="--bs-table-bg: #555e6a; --bs-table-color: white; --c-table-color: white" >
-        <thead>
-          <tr style="--bs-table-color: black">
-            <th class="bg-primary-subtle">Item Code</th>
-            <th class="bg-primary-subtle">Item description</th>
-            <th class="bg-primary-subtle">Price</th>
-            <th class="bg-primary-subtle">Quantity</th>
-          </tr>
-        </thead>
-        <tbody id="ItemTbl" style="color: white">
-        </tbody>
-      </table>
-    </div>
-  </main>
+  <section id="item-search-content" class="col-12 col-sm-8 my-2">
+    <section id="item-search">
+      <form class="row gx-3 gy-2 align-items-center">
+        <div class="col-sm-3">
+          <label class="visually-hidden">Preference</label>
+          <select class="form-select" id="cmbItemSearch">
+            <option value="code">Code</option>
+            <option value="name">Name</option>
+          </select>
+        </div>
+        <div class="w-50 col-sm-3">
+          <label class="visually-hidden">Name</label>
+          <input type="text" class="form-control" id="txtItemSearch" placeholder="Search item">
+        </div>
+        <div class="col-auto">
+          <button id="btnItemSearch" type="button" class="btn btn-outline-primary">Search</button>
+        </div>
+        <div class="col-auto">
+          <button id="searchbtnItemClear" type="button" class="btn btn-outline-warning">Clear</button>
+        </div>
+      </form>
+    </section>
+  </section>
 
+  <!--Table-->
+  <div class="modal-footer mb-3" style="position: relative;">
+    <table class="table table-bordered table-hover table-striped-columns">
+      <thead>
+      <tr class="table mt-5 p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+
+        <th class="bg-primary-subtle">Code</th>
+        <th class="bg-primary-subtle">Item Pic</th>
+        <th class="bg-primary-subtle">Description</th>
+        <th class="bg-primary-subtle">Category</th>
+        <th class="bg-primary-subtle">Size-6</th>
+        <th class="bg-primary-subtle">Size-7</th>
+        <th class="bg-primary-subtle">Size-8</th>
+        <th class="bg-primary-subtle">Size-9</th>
+        <th class="bg-primary-subtle">Sale Price</th>
+        <th class="bg-primary-subtle">Buy Price</th>
+        <th class="bg-primary-subtle">Profit</th>
+        <th class="bg-primary-subtle">Profit Margin</th>
+        <th class="bg-primary-subtle">Status</th>
+        <th class="bg-primary-subtle">Supplier Code</th>
+        <th class="bg-primary-subtle">Supplier Name</th>
+      </tr>
+      </thead>
+      <tbody id="itemTbl">
+      <!-- Table body content -->
+      </tbody>
+    </table>
+  </div>
+</main>
 
 <!-- Order main  ///////////////////////////////////////////////////////////////////////////////////////////// -->
   <main class="container-fluid" id="orderContent">
@@ -704,18 +918,22 @@
       </table>
     </div>
   </main>
-
   <script src="assets/js/jquery-3.6.1.min.js"></script>
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>
   <script src="controller/DashboardController.js"></script>
   <script src="db/db.js"></script>
-
-
 <!--  <script src="models/Customer.js"></script>-->
   <script src="controller/CustomerController.js"></script>
-<!--  <script src="controller/validations/CustomerValidations.js"></script>-->
+  <script src="controller/validations/CustomerValidations.js"></script>
 
-<script src="controller/EmployeController.js"></script>
+ <script src="controller/EmployeController.js"></script>
+ <script src="controller/validations/EmployeeValidation.js"></script>
+
+ <script src="controller/SupplierController.js"></script>
+<script src="controller/validations/SupplierValidation.js"></script>
+
+ <script src="controller/ItemController.js"></script>
+  <script src="controller/validations/ItemValidations.js"></script>
 
 <!--  <script src="models/Item.js"></script>-->
 <!--  <script src="controller/ItemController.js"></script>-->

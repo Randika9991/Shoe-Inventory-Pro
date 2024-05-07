@@ -1,97 +1,81 @@
+const ITM_CODE_REGEX = /^[A-Za-z]+-[0-9]*$/
+const ITM_NAME_REGEX = /^[A-Za-z ]{3,}$/;
+const ITM_NUM_REGEX = /^(0|[1-9]\d*)$/;
+const ITM_DECIMAL_REGEX = /^-?\d*\.?\d+$/;
 
-const Item_iD_Check = /^(I00-)[0-9]{3}$/;
-const Item_desc_Check = /^[A-Za-z ]{2,}$/;
-const Item_Price_Check = /^[0-9]{2,}([.][0-9]{2})?$/;
-const Item_Quantity_Check = /^[0-9]{1,}$/;
+let itemValidation = [];
+itemValidation.push({field:$("#txtItemCode"),regEx: ITM_CODE_REGEX});
+itemValidation.push({field:$("#txtItemDesc"),regEx: ITM_NAME_REGEX});
+itemValidation.push({field:$("#txtItemCategory"),regEx: ITM_NAME_REGEX});
+itemValidation.push({field:$("#txtItemSize6"),regEx: ITM_NUM_REGEX});
+itemValidation.push({field:$("#txtItemSize7"),regEx: ITM_NUM_REGEX});
+itemValidation.push({field:$("#txtItemSize8"),regEx: ITM_NUM_REGEX});
+itemValidation.push({field:$("#txtItemSize9"),regEx: ITM_NUM_REGEX});
+itemValidation.push({field:$("#txtItemUnitPriceSale"),regEx: ITM_DECIMAL_REGEX});
+itemValidation.push({field:$("#txtItemUnitPriceBuy"),regEx: ITM_DECIMAL_REGEX});
+itemValidation.push({field:$("#txtItemProfit"),regEx: ITM_DECIMAL_REGEX});
+itemValidation.push({field:$("#txtItemProfitMargin"),regEx: ITM_DECIMAL_REGEX});
+itemValidation.push({field:$("#txtItemStatus"),regEx: ITM_NAME_REGEX});
 
-let itemArray = new Array();
-itemArray.push({field: $("#ItemtxtID"), regEx: Item_iD_Check});
-itemArray.push({field: $("#ItemtxtDescription"), regEx: Item_desc_Check});
-itemArray.push({field: $("#ItemtxtPrice"), regEx: Item_Price_Check});
-itemArray.push({field: $("#ItemtxtQuantity"), regEx: Item_Quantity_Check});
+setItemBtn();
 
-function clearItemInputFields() {
-    $("#ItemtxtID,#ItemtxtDescription,#ItemtxtPrice,#ItemtxtQuantity").val("");
-    $("#ItemtxtID,#ItemtxtDescription,#ItemtxtPrice,#ItemtxtQuantity").css("border", "1px solid #ced4da");
-    $("#ItemtxtID").focus();
-    setBtnItem();
-}
+$("#txtItemCode,#txtItemDesc,#txtItemCategory,#txtItemSize6,#txtItemSize7,#txtItemSize8,#txtItemSize9,#txtItemUnitPriceSale,#txtItemUnitPriceBuy,#txtItemProfit,#txtItemProfitMargin,#txtItemStatus")
+    .on("keydown keyup", function (e) {
+        let indexNo = itemValidation.indexOf(itemValidation.find((c) => c.field.attr("id") === e.target.id));
 
-setBtnItem();
-
-function setBtnItem() {
-    $("#btnItemDelete").prop("disabled", true);
-    $("#btnItemUpdate").prop("disabled", true);
-
-    if (checkAllItem()) {
-        $("#btnSaveItem").prop("disabled", false);
-        $("#btnItemDelete").prop("disabled", false);
-        $("#btnItemUpdate").prop("disabled", false);
-    } else {
-        $("#btnSaveItem").prop("disabled", true);
-        $("#btnItemDelete").prop("disabled", true);
-        $("#btnItemUpdate").prop("disabled", true);
-    }
-}
-
-$("#ItemtxtID,#ItemtxtDescription,#ItemtxtPrice,#ItemtxtQuantity").on("keydown keyup", function (e) {
-    let indexNo = itemArray.indexOf(itemArray.find((c) => c.field.attr("code") == e.target.code));
-
-    if (e.key == "Tab") {
-        e.preventDefault();
-    }
-
-    checkValidations(itemArray[indexNo]);
-
-    setBtnItem();
-
-    if (e.key == "Enter") {
-
-        if (e.target.id != itemArray[itemArray.length - 1].field.attr("code")) {
-            if (checkValidations(itemArray[indexNo])) {
-                itemArray[indexNo + 1].field.focus();
-            }
-        } else {
-            if (checkValidations(itemArray[indexNo])) {
-                saveItem();
-            }
+        if(e.key==="Tab"){
+            e.preventDefault();
         }
-    }
-});
+        checkValidations(itemValidation[indexNo]);
+        setItemBtn()
+    })
 
 function checkValidations(object) {
     if (object.regEx.test(object.field.val())) {
-        setBorder(true, object)
+        setItemBorder(true, object);
         return true;
     }
-    setBorder(false, object)
+    setItemBorder(false, object);
     return false;
 }
 
-function setBorder(bol, ob) {
-    if (!bol) {
-        if (ob.field.val().length >= 1) {
-            ob.field.css("border", "2px solid red");
-        } else {
-            ob.field.css("border", "2px solid white");
+function checkAllItems() {
+    for (let i = 0; i < itemValidation.length; i++) {
+        if (!checkValidations(itemValidation[i])){
+            return false;
         }
-    } else {
-        if (ob.field.val().length >= 1) {
-            ob.field.css("border", "2px solid green");
-        } else {
-            ob.field.css("border", "2px solid white");
-        }
-    }
 
-}
-
-function checkAllItem() {
-    for (let i = 0; i < itemArray.length; i++) {
-        if (!checkValidations(itemArray[i])) return false;
     }
     return true;
 }
 
+function setItemBorder(bol, ob) {
+    if (!bol) {
+        if (ob.field.val().length >= 1) {
+            ob.field.css("border", "2px solid red");
+        } else {
+            ob.field.css("border", "1px solid rgb(206, 212, 218)");
+        }
+    } else {
+        if (ob.field.val().length >= 1) {
+            ob.field.css("border", "1px solid rgb(206, 212, 218)");
+        } else {
+            ob.field.css("border", "1px solid rgb(206, 212, 218)");
 
+            //ob.field.css("border", "var(--bs-border-width) solid var(--bs-border-color)");
+        }
+    }
+}
 
+function setItemBtn() {
+    if (checkAllItems()) {
+        $("#btnSaveItem").prop("disabled", false);
+        $("#btnItemUpdate").prop("disabled", false);
+        $("#btnItemDelete").prop("disabled", false);
 
+    } else {
+        $("#btnSaveItem").prop("disabled", true);
+        $("#btnItemUpdate").prop("disabled", true);
+        $("#btnItemDelete").prop("disabled", true);
+    }
+}
