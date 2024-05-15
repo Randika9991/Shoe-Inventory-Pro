@@ -131,13 +131,13 @@ function saveItem() {
 
 //updateItem ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 $("#btnItemUpdate").click(function () {
-    // if (checkAllItems()) {
-    //     if (checkItemEmptyInputFields()){
-    updateItem();
-    // }
-    // } else {
-    //     alert("Please check the input fields!")
-    // }
+    if (checkAllItems()) {
+        if (checkItemEmptyInputFields()){
+            updateItem();
+        }
+    } else {
+        alert("Please check the input fields!")
+    }
 })
 
 function updateItem() {
@@ -378,7 +378,7 @@ $("#itemTbl").on('click', 'tr', function () {
 
 function checkItemEmptyInputFields(){
     if ($("#cmbItemSupCode").val()==="" || $("#txtItemSupName").val()==="" ||$("#txtItemProfilePic").val()===""){
-        swal("Error", "Fill all empty the fields!", "error");
+        alert("Fill all empty the fields!");
         return false;
     }
     return true

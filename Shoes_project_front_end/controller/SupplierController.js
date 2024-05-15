@@ -93,7 +93,11 @@ function SaveSupplier() {
 
 // update
 $("#btnSupplierUpdate").click(function (){
-    SupplierUpdate();
+    if (checkAllSuppliers()) {
+        SupplierUpdate();
+    } else {
+        alert("Please check the input fields!")
+    }
 })
 
 function SupplierUpdate() {

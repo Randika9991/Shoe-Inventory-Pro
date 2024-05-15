@@ -139,7 +139,11 @@ function saveEmployee(){
 }
 
 $("#eUpdateBtn").click(function () {
-    updateEmployee();
+    if (checkAllEmployees()) {
+        updateEmployee();
+    } else {
+        alert("Please check the input fields!")
+    }
 });
 
 function updateEmployee() {

@@ -77,6 +77,7 @@ $("#btnSaveCustomer").click(function (){
         alert("Please check the input fields!")
     }
 })
+
 function saveCustomer(){
     let id=$("#cId").val();
     let name=$("#cName").val();
@@ -109,16 +110,18 @@ function saveCustomer(){
             "addressLine2":addressLine2,
             "loyaltyDate":loyaltyDate,
             "loyaltyLevel":"NEW",
-            "loyaltyPoints":8
+            "loyaltyPoints":0
         }),
 
         success:function (response) {
-            console.log(response)
+            alert("Customer save successfully!")
             getAllCustomers();
             $("#btnSaveCustomer").prop("disabled", true);
             $("#btnUpdate").prop("disabled", true);
             $("#btnCusDelete").prop("disabled", true);
+
         },
+
         error:function (xhr,status,err) {
             console.log(err)
             console.log(xhr.status)
@@ -131,8 +134,13 @@ function saveCustomer(){
 
 // update
 $("#btnUpdate").click(function (){
-    updateCustomer()
+    if (checkAllCustomers()) {
+        updateCustomer()
+    } else {
+        alert("Please check the input fields!")
+    }
 })
+
 function updateCustomer() {
     let code=$("#cId").val();
     let name=$("#cName").val();
@@ -144,11 +152,16 @@ function updateCustomer() {
     let loyaltyDate=$("#cLoyaltyDate").val();
     let loyaltyLevel=$("#cLevel").val();
     let gender=$("#cGender").val();
-    let loyaltyPoints=$("#cLoyaltyPoint").val();
+    // let loyaltyPoints=$("#cLoyaltyPoint").val();
     let recentDate=$("#cRecentDate").val();
 
     if (recentDate==="No Purchases Yet"){
         recentDate=null;
+    }
+
+    if(name==="" || email==="" || contact==="" || addressLine1==="" || addressLine2==="" || dob==="" ||loyaltyDate==="" || gender==="Choose..."){
+        alert("fill all empty fields !!")
+        return;
     }
 
     $.ajax({
@@ -171,7 +184,6 @@ function updateCustomer() {
         success:function (response){
             alert("Customer updated successfully!")
             getAllCustomers();
-            // clearCustomerInputFields();
             $("#btnSaveCustomer").prop("disabled", true);
             $("#btnUpdate").prop("disabled", true);
             $("#btnCusDelete").prop("disabled", true);
@@ -222,12 +234,14 @@ $('#customTbl').on('click', 'tr', function (){
 
 // search
 $("#searchInput").on("input", function (){
+
     $("#customTbl").empty();
     let name=$("#searchInput").val();
     console.log(name.trim())
+
     if (name === "") {
-        getAllCustomers(); // If the input is empty, retrieve all customers
-        return; // Exit the function to prevent further execution
+        getAllCustomers();
+        return;
     }
 
     $.ajax({
@@ -280,6 +294,7 @@ $("#searchInput").on("input", function (){
             console.error("AJAX request failed:", status, error);
         }
     });
+
 });
 
 $("#btnCustomerClear").on("click", function () {
@@ -297,8 +312,6 @@ $("#btnCustomerClear").on("click", function () {
     $("#cLoyaltyPoint").val("");
     $("#cRecentDate").val("");
 });
-
-
 
 function customerCapitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
