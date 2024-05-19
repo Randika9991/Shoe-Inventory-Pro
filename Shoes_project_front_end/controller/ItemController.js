@@ -15,8 +15,6 @@ $(document).ready(function () {
     getAllItem();
 });
 
-
-
 //AllSuppliersCode //////////////////////////////////////////////////////////////////////////////////////////////////
 function loadAllSuppliersCode() {
     $("#cmbItemSupCode").empty();

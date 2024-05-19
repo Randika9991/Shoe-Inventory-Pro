@@ -22,6 +22,7 @@ public class Employee {
     @Id
     private String code;
     private String name;
+
     @Column(columnDefinition = "LONGTEXT")
     private String proPic;
 

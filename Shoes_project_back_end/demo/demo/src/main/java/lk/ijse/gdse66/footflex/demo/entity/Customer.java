@@ -9,7 +9,6 @@ import lk.ijse.gdse66.footflex.demo.util.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.ColumnDefault;
 
 import java.sql.Date;
 import java.sql.Timestamp;
@@ -18,9 +17,9 @@ import java.sql.Timestamp;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Customer {
     @Id
-//@GeneratedValue(strategy = GenerationType.AUTO)
     private String code;
     private String name;
     private String email;
@@ -31,10 +30,8 @@ public class Customer {
     private String addressLine1;
     private String addressLine2;
     private Date loyaltyDate;
-
     @Enumerated(EnumType.STRING)
     private CustomerLoyaltyLevel loyaltyLevel;
-
     private Integer loyaltyPoints;
     private Timestamp recentPurchaseDate;
 }

@@ -1,20 +1,17 @@
-//logics for SPA
 initiateUI();
 
 function initiateUI() {
     clearAll();
-    // Set the signup page as the initial view
     setView($("#singUpPage"));
     setTheLastView();
 
-    //change
-    $("#lnkCustomer").css("display", "none");
-    $("#lnkItem").css("display", "none");
-    $("#lnkOrders").css("display", "none");
-    $("#lnkEmployee").css("display", "none");
-    $("#lnkSupplier").css("display", "none");
-
-    // setView($("#navigatoon"));
+    // Hide all links initially
+    $("#lnkCustomer").hide();
+    $("#lnkItem").hide();
+    $("#lnkOrders").hide();
+    $("#lnkEmployee").hide();
+    $("#lnkSupplier").hide();
+    $("#lnkOrderDetails").hide(); // New Link
 }
 
 function saveLastView(clickedID) {
@@ -37,13 +34,14 @@ function saveLastView(clickedID) {
         case "singUpPage":
             localStorage.setItem("view", "SIGNUP");
             break;
-
         case "employeeContent":
             localStorage.setItem("view", "EMPLOYEE");
             break;
-
         case "supplierContent":
             localStorage.setItem("view", "SUPPLIER");
+            break;
+        case "OrderDetailsContent": // New Case
+            localStorage.setItem("view", "ORDER_DETAILS");
             break;
     }
 }
@@ -69,34 +67,32 @@ function setTheLastView() {
         case "SIGNUP":
             setView($("#singUpPage"));
             break;
-
         case "EMPLOYEE":
             setView($("#employeeContent"));
             break;
-
         case "SUPPLIER":
             setView($("#supplierContent"));
             break;
-
+        case "ORDER_DETAILS": // New Case
+            setView($("#OrderDetailsContent"));
+            break;
         default:
             setView($("#dashboardContent"));
-
-
     }
 }
 
 function clearAll() {
-    $("#dashboardContent,#customerContent,#itemContent,#orderContent,#loginPage,#singUpPage,#employeeContent,#supplierContent").css('display', 'none');
+    $("#dashboardContent, #customerContent, #itemContent, #orderContent, #loginPage, #singUpPage, #employeeContent, #supplierContent, #OrderDetailsContent").hide(); // Updated to include orderDetailsContent
 }
 
 function setView(viewOb) {
     clearAll();
-    viewOb.css("display", "block");
+    viewOb.show();
     saveLastView(viewOb.get(0).id);
     console.log(viewOb.get(0).id);
 }
 
-//bind events
+// Bind events
 $("#lnkHome").click(function () {
     setView($("#dashboardContent"));
 });
@@ -113,7 +109,6 @@ $("#lnkOrders").click(function () {
     setView($("#orderContent"));
 });
 
-// New events for login and signup links
 $("#lnkLogin").click(function () {
     setView($("#loginPage"));
 });
@@ -124,22 +119,22 @@ $("#lnkSignup").click(function () {
 
 $("#loginSubmit").click(function () {
     setView($("#dashboardContent"));
-    $("#lnkCustomer").css("display", "block");
-    $("#lnkItem").css("display", "block");
-    $("#lnkOrders").css("display", "block");
-
-    $("#lnkEmployee").css("display", "block");
-    $("#lnkSupplier").css("display", "block");
+    $("#lnkCustomer").show();
+    $("#lnkItem").show();
+    $("#lnkOrders").show();
+    $("#lnkEmployee").show();
+    $("#lnkSupplier").show();
+    $("#lnkOrderDetails").show(); // Show new link after login
 });
 
 $("#SignupSubmit").click(function () {
     setView($("#dashboardContent"));
-    $("#lnkCustomer").css("display", "block");
-    $("#lnkItem").css("display", "block");
-    $("#lnkOrders").css("display", "block");
-
-    $("#lnkEmployee").css("display", "block");
-    $("#lnkSupplier").css("display", "block");
+    $("#lnkCustomer").show();
+    $("#lnkItem").show();
+    $("#lnkOrders").show();
+    $("#lnkEmployee").show();
+    $("#lnkSupplier").show();
+    $("#lnkOrderDetails").show(); // Show new link after signup
 });
 
 $("#lnkEmployee").click(function () {
@@ -158,9 +153,8 @@ $("#lnkSupplier").click(function () {
     setView($("#supplierContent"));
 });
 
-// New event for item link
-$("#lnkItem").click(function () {
-    setView($("#itemContent"));
+$("#lnkOrderDetails").click(function () { // New event
+    setView($("#OrderDetailsContent"));
 });
 
 // Additional events for managing item content
