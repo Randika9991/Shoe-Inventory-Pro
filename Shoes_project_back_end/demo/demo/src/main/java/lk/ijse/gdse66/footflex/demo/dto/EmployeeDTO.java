@@ -1,13 +1,9 @@
-package lk.ijse.gdse66.footflex.demo.dto;/*
+package lk.ijse.gdse66.footflex.demo.dto;
+/*
     this application is copyright protected
     Author : kumara
     Date : 5/3/2024
 */
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
-
 import lk.ijse.gdse66.footflex.demo.util.Gender;
 import lk.ijse.gdse66.footflex.demo.util.Role;
 import lombok.AllArgsConstructor;

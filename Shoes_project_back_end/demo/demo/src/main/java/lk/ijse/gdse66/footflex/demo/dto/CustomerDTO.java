@@ -1,4 +1,5 @@
-package lk.ijse.gdse66.footflex.demo.dto;/*
+package lk.ijse.gdse66.footflex.demo.dto;
+/*
     this application is copyright protected
     Author : kumara
     Date : 4/30/2024

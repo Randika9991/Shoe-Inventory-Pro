@@ -1,4 +1,5 @@
-package lk.ijse.gdse66.footflex.demo.entity;/*
+package lk.ijse.gdse66.footflex.demo.entity;
+/*
     this application is copyright protected
     Author : kumara
     Date : 5/19/2024

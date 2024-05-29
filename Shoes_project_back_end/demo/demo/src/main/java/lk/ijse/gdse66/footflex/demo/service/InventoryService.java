@@ -18,4 +18,10 @@ public interface InventoryService {
     InventoryDTO searchItemById(String id);
     String generateNextId();
     List<SupplierDTO> loadSupplierCode();
+
+
+    List<InventoryDTO> getAllItemsByPrice(double minPrice, double maxPrice);
+
+    List<InventoryDTO> getAllItemsByGender(String gender);
 }
+

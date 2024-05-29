@@ -5,12 +5,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.io.IOException;
-
 @SpringBootApplication
 public class DemoApplication {
 
-    public DemoApplication() throws IOException {
+    public DemoApplication() {
     }
 
     public static void main(String[] args) {
@@ -18,8 +16,7 @@ public class DemoApplication {
     }
 
     @Bean
-    public ModelMapper mapper(){
+    public ModelMapper mapper() {
         return new ModelMapper();
     }
-
 }

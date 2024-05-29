@@ -144,7 +144,7 @@ public class PlaceOrderServiceImpl implements PlaceOrderService {
         } else {
             nextNumericPart = 1;
         }
-        id = prefix + String.format("%04d", nextNumericPart);
+        id = prefix + String.format("%03d", nextNumericPart);
 
         System.out.println("Order next id ="+id);
         return id;

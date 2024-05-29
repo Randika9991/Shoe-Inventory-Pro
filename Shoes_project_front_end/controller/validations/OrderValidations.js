@@ -2,7 +2,6 @@ const ORDER_QTY_REGEX = /^\d{1,4}$/;
 const ORDER_DISCOUNT_REGEX = /^\d{0,2}$/;
 const ORDER_CASH_REGEX = /^[0-9]{2,}([.][0-9]{2})?$/;
 
-// btnAddToCart validations///////////////////////////////////////////
 $('#txtOrderQty').on("keyup",function () {
     checkItemDetailsInputFields();
 });
@@ -33,7 +32,7 @@ function checkItemDetailsInputFields() {
     }
 }
 
-// btnPlaceOrder validations///////////////////////////////////////////
+// btnPlaceOrder validations/////////////////////////////////////////////////////////////////////////////////////////////////////
 function validateTxtCash() {
     if (ORDER_CASH_REGEX.test($('#txtCash').val())) {
         $('#txtCash').css("border", "1px solid rgb(206, 212, 218)");
@@ -62,7 +61,6 @@ function validateTxtAddPoints() {
     }
 }
 
-//addedPoints /////////////////
 $('#txtAddPoints').on("keyup",function (){
     if (validateTxtAddPoints()) {
         calculateBalance();

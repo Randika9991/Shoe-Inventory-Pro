@@ -56,4 +56,21 @@ public class InventoryController {
     public List<SupplierDTO> loadSuppliersCode(){
         return inventoryService.loadSupplierCode();
     }
+
+    @GetMapping("/getAllItemsByPrice/{minPrice}/{maxPrice}")
+    public List<InventoryDTO> getAllItemsByPrice(@PathVariable double minPrice,@PathVariable double maxPrice){
+        return inventoryService.getAllItemsByPrice(minPrice, maxPrice);
+    }
+
+    @GetMapping("/getAllItemsByCategoryGender")
+    public List<InventoryDTO> getAllItemsByGender(@RequestParam("gender") String gender){
+        System.out.println("gender = "+gender);
+        return inventoryService.getAllItemsByGender(gender);
+    }
+
+    @GetMapping("/getAllItemsByCategoryOccasion")
+    public List<InventoryDTO> getAllItemsByOccasion(@RequestParam("occasion") String occasion){
+        System.out.println("occasion = "+occasion);
+        return inventoryService.getAllItemsByGender(occasion);
+    }
 }

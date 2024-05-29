@@ -1,4 +1,5 @@
-package lk.ijse.gdse66.footflex.demo.controller;/*
+package lk.ijse.gdse66.footflex.demo.controller;
+/*
     this application is copyright protected
     Author : kumara
     Date : 5/3/2024
@@ -35,7 +36,7 @@ public class EmployeeController {
     @GetMapping("getAll")
     private List<EmployeeDTO> getAllCustomers(){
         List<EmployeeDTO> employeeDTOs = new ArrayList<>();
-        return employeeService.getAllEmployees();
+        return employeeService.getAllEmployee();
     }
 
     @GetMapping("/nextId")
@@ -109,5 +110,15 @@ public class EmployeeController {
     public List<EmployeeDTO> search(@RequestParam ("name") String name){
         return employeeService.searchEmployee(name);
     }
+
+    @GetMapping("/searchByEmail")
+    public EmployeeDTO searchByEmail(@RequestParam("email")String email){
+        return employeeService.searchByEmail(email);
+    }
+    @DeleteMapping("/delete")
+    public boolean delete(@RequestParam("code") String code){
+        return employeeService.deleteEmployee(code);
+    }
+
 }
 

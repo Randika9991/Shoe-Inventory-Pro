@@ -80,4 +80,14 @@ public class InventoryServiceImpl implements InventoryService {
     public List<SupplierDTO> loadSupplierCode() {
         return supplierRepo.findAll().stream().map(supplier -> mapper.map(supplier,SupplierDTO.class)).toList();
     }
+
+    @Override
+    public List<InventoryDTO> getAllItemsByPrice(double minPrice, double maxPrice) {
+        return inventoryRepo.findBySalePriceBetween(minPrice, maxPrice).stream().map(inventory -> mapper.map(inventory,InventoryDTO.class)).toList();
+    }
+
+    @Override
+    public List<InventoryDTO> getAllItemsByGender(String gender) {
+        return inventoryRepo.findByCategoryContaining(gender).stream().map(inventory -> mapper.map(inventory,InventoryDTO.class)).toList();
+    }
 }

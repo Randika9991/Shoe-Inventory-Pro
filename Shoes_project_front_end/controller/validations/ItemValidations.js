@@ -44,7 +44,6 @@ function checkAllItems() {
         if (!checkValidations(itemValidation[i])){
             return false;
         }
-
     }
     return true;
 }
@@ -61,8 +60,6 @@ function setItemBorder(bol, ob) {
             ob.field.css("border", "1px solid rgb(206, 212, 218)");
         } else {
             ob.field.css("border", "1px solid rgb(206, 212, 218)");
-
-            //ob.field.css("border", "var(--bs-border-width) solid var(--bs-border-color)");
         }
     }
 }

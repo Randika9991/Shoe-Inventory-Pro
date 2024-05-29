@@ -8,6 +8,9 @@ function loadNextSupplierId() {
     $.ajax({
         url:"http://localhost:8080/api/v1/supplier/nextId",
         method:"GET",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success:function (resp) {
             $("#SupCode").val(resp);
         },
@@ -23,6 +26,9 @@ function getAllSuppliers() {
         url: "http://localhost:8080/api/v1/supplier/getAll",
         method: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success: function (response) {
             loadSupplierDataToTable(response);
         },
@@ -74,6 +80,9 @@ function SaveSupplier() {
         method: "POST",
         data: jsonObj,
         contentType: "application/json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success: function (resp, textStatus, jqxhr) {
             getAllSuppliers();
             alert("Supplier saved successfully!")
@@ -133,6 +142,9 @@ function SupplierUpdate() {
         method: "PATCH",
         data: jsonObj,
         contentType: "application/json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success: function (resp, textStatus, jqxhr) {
             //console.log("customer save success: ", resp);
             // clearSupInputFields();
@@ -177,6 +189,9 @@ function deleteSupplier(code) {
         url: "http://localhost:8080/api/v1/supplier/delete?"+"code="+code,
         method: "DELETE",
         dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success: function (resp) {
             console.log("resp = "+resp)
             if (resp){
@@ -216,6 +231,9 @@ function supSearch(value, link,searchType) {
         url: link + encodeURIComponent(value),
         method: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success: function (resp) {
             if (searchType === "code"){
                 loadSupplierDataToTableById(resp);
@@ -253,10 +271,10 @@ function loadSupplierDataToTableById(supplier) {
 
 
 function loadSupplierDataToTable(response) {
-    console.log("Response:", response); // Log the response object
-    $("#SupplierTbl").empty(); // Clear the table before populating it with new data
+    console.log("Response:", response);
+    $("#SupplierTbl").empty();
     $.each(response, function (index, supplier) {
-        console.log("Supplier:", supplier); // Log each supplier object
+        console.log("Supplier:", supplier);
         let data = `<tr>
                        <th>${supplier.code}</th>
                        <td>${supplier.name}</td>

@@ -9,6 +9,9 @@ function loadNextOrderId() {
     $.ajax({
         url:"http://localhost:8080/api/v1/placeOrder/nextOrderId",
         method:"GET",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success:function (resp) {
             $("#txtOrderId").val(resp);
         },
@@ -108,6 +111,7 @@ $("#btnPlaceOrder").click(function () {
     let orderDate = new Date();
     let totalPrice = $("#lblSubTotal").text();
     let addedPoints;
+
     console.log($("#txtAddPoints").val());
     if ($("#txtAddPoints").val() === ""){
         addedPoints = 0;
@@ -154,6 +158,9 @@ $("#btnPlaceOrder").click(function () {
             method: "POST",
             data: jsonObj,
             contentType: "application/json",
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            },
             success: function (resp, textStatus, jqxhr) {
                 console.log("placeOder success: ", resp);
                 clearItemDetailsInputFields();
@@ -224,6 +231,9 @@ function loadItemCodes() {
     $.ajax({
         url:"http://localhost:8080/api/v1/placeOrder/loadItemCodes",
         method:"GET",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success:function (resp) {
             $("#cmbItemCodes").empty().append(`<option selected></option>`);
             $.each(resp, function (index, code) {
@@ -247,6 +257,9 @@ $("#cmbItemCodes").change(function () {
     $.ajax({
         url:"http://localhost:8080/api/v1/placeOrder/searchItemByCode?code="+code,
         method:"GET",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success:function (resp) {
             itemObj = resp;
             console.log(itemObj)
@@ -284,6 +297,9 @@ function loadCustomerIds() {
     $.ajax({
         url:"http://localhost:8080/api/v1/placeOrder/loadCusIds",
         method:"GET",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success:function (resp) {
             $("#cmbCustomerIds").empty().append(`<option selected></option>`);
             $.each(resp, function (index, cusId) {
@@ -302,6 +318,9 @@ $("#cmbCustomerIds").change(function () {
     $.ajax({
         url:"http://localhost:8080/api/v1/placeOrder/searchCusById?code="+code,
         method:"GET",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success:function (resp) {
             $("#lblCustomerName").val(resp.name);
         },

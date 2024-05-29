@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1938b2d2-a3dd-4415-a419-ab0b47feeb94" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/Shoes_project_back_end.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/auth/request/SignInRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/auth/request/SignUpRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/auth/response/JwtAuthResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/config/JwtConfigurationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/AuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/AuthenticationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/JwtServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shoes_project_front_end/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shoes_project_front_end/assets/bac/icons8-log-out-64.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shoes_project_front_end/assets/bac/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shoes_project_front_end/assets/pages/admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shoes_project_front_end/assets/pages/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/LoginAndSignUpController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/LoginController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/ProductController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/UpdateUser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/signup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/validations/LogInValidation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/validations/SignUpVallidation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Shoes_project_front_end/user.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/controller/InventoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/controller/InventoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/controller/OrderDetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/controller/OrderDetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/controller/PlaceOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/controller/SupplierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/controller/SupplierController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/CustomDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/CustomDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/CustomerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/CustomerDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/EmployeeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/EmployeeDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/InventoryDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/InventoryDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/OrderDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/OrderDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/OrderDetailDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/OrderDetailDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/SupplierDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/dto/SupplierDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/embedded/OrderDetailPK.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/embedded/OrderDetailPK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/entity/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/entity/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/entity/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/entity/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/entity/Inventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/entity/Inventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/entity/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/entity/OrderDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/entity/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/entity/Supplier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/repository/CustomerRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/repository/CustomerRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/repository/EmployeeRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/repository/EmployeeRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/repository/InventoryRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/repository/InventoryRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/repository/OrderDetailRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/repository/OrderDetailRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/repository/OrderRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/repository/OrderRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/repository/SupplierRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/repository/SupplierRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/EmployeeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/InventoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/InventoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/InventoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/InventoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/PlaceOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/java/lk/ijse/gdse66/footflex/demo/service/PlaceOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/demo/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/demo/demo/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/.idea/shoe_project_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoes_project_front_end/.idea/shoe_project_system.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/controller/CustomerController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/CustomerController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/controller/DashboardController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/AdminDashboardController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/controller/EmployeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/EmployeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/controller/ItemController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/ItemController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/controller/OrderController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/OrderController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/controller/OrderDetailsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/OrderDetailsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/controller/SupplierController.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/SupplierController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/controller/validations/CustomerValidations.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/validations/CustomerValidations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/controller/validations/EmployeeValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/validations/EmployeeValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/controller/validations/ItemValidations.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/validations/ItemValidations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/controller/validations/OrderValidations.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/validations/OrderValidations.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/controller/validations/SupplierValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../Shoes_project_front_end/controller/validations/SupplierValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Shoes_project_front_end/index.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="2goQFoVuPoGNCw2i9UgZZnhsHDo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../2nd SEMESTER 1st leson arcitecchur/AAD/Spring Boot Final Project workZone/now/Shoe-shop-management-system/shoe-shop-back-end" />
+  </component>
+  <component name="RunManager">
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="lk.ijse.gdse66.footflex.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1938b2d2-a3dd-4415-a419-ab0b47feeb94" name="Default Changelist" comment="" />
+      <created>1716361349619</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1716361349619</updated>
+      <workItem from="1716361350939" duration="550000" />
+      <workItem from="1716361975052" duration="618000" />
+      <workItem from="1716362856114" duration="10309000" />
+      <workItem from="1716737366289" duration="1209000" />
+      <workItem from="1716818967244" duration="602000" />
+      <workItem from="1716881397107" duration="12055000" />
+      <workItem from="1716957950629" duration="18369000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>

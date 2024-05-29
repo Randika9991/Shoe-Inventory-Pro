@@ -7,6 +7,9 @@ function loadNextEmployeeId(){
     $.ajax({
         url:"http://localhost:8080/api/v1/employee/nextId",
         method:"GET",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success:function (response) {
             $("#eId").val(response);
         },
@@ -22,6 +25,9 @@ function getAllEmployees() {
         url: "http://localhost:8080/api/v1/employee/getAll",
         method: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success: function (response) {
             console.log(response);
             loadEmployeeDataInTable(response);
@@ -120,6 +126,9 @@ function saveEmployee(){
         processData: false,
         contentType: false,
         data:formData,
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
 
         success:function (response) {
             console.log(response)
@@ -199,6 +208,9 @@ function updateEmployee() {
         processData: false,
         contentType: false,
         data: formData,
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
 
         success: function (response) {
             alert("Employee update Success")
@@ -217,6 +229,38 @@ function updateEmployee() {
     });
 }
 
+$("#eDeleteBtn").click(function () {
+    let code = $("#eId").val();
+    if (code === "") {
+        alert( "Please input valid Employee ID!")
+        return;
+    }
+    deleteEmployee(code);
+})
+function deleteEmployee(code) {
+    $.ajax({
+        url: "http://localhost:8080/api/v1/employee/delete?code="+code,
+        method: "DELETE",
+        dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
+        success: function (resp) {
+            console.log("resp = "+resp)
+            if (resp){
+                alert("Employee deleted successfully!")
+                employeeClear();
+                getAllEmployees()
+                return;
+            }
+            alert("This employee does not exits!")
+        },
+        error: function (xhr, status, error) {
+            console.log("empDelete = "+error)
+        }
+    })
+}
+
 // serch
 $("#searchInput").on("input", function () {
     $("#employeeTbl").empty();
@@ -226,6 +270,9 @@ $("#searchInput").on("input", function () {
         url: 'http://localhost:8080/api/v1/employee/search?name='+name,
         method:"GET",
         dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
 
         success:function (response) {
             console.log(response)
@@ -349,6 +396,11 @@ $('#employeeTbl').on('click', 'tr', function (){
 })
 
 $("#eClearBtn").on("click", function () {
+    employeeClear();
+})
+
+function employeeClear() {
+    loadNextEmployeeId();
     $("#eId").val("");
     $("#eName").val("");
     $("#eEmail").val("");
@@ -364,9 +416,7 @@ $("#eClearBtn").on("click", function () {
     $("#eGuardian").val("");
     $("#eHomeNumber").val("");
     $("#eState").val("");
-})
-
-
+}
 
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);

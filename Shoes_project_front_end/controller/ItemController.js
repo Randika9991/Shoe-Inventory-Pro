@@ -23,6 +23,9 @@ function loadAllSuppliersCode() {
         url: "http://localhost:8080/api/v1/inventory/loadSuppliersCode",
         method: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success: function (resp) {
             supplierAllData = resp;
             $.each(resp,function (index, supplier) {
@@ -106,6 +109,9 @@ function saveItem() {
             dataType: "json",
             contentType:"application/json",
             data: JSON.stringify(itemObj),
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            },
             success: function (resp) {
                 //console.log("customer save success: ", resp);
                 alert("Item saved successfully!")
@@ -190,6 +196,9 @@ function updateItem() {
             dataType: "json",
             contentType:"application/json",
             data: JSON.stringify(itemObj),
+            headers: {
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            },
             success: function (resp) {
                 //console.log("customer save success: ", resp);
                 // clearItemInputFields()
@@ -228,6 +237,9 @@ function deleteItem(code) {
         url: "http://localhost:8080/api/v1/inventory/delete?code="+code,
         method: "DELETE",
         dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success: function (resp) {
             console.log("resp = "+resp)
             if (resp){
@@ -249,6 +261,9 @@ function getAllItem() {
         url: "http://localhost:8080/api/v1/inventory/getAll",
         method: "GET",
         dataType: "json",
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
         success: function (resp) {
             loadInventoryDataToTable(resp);
         },

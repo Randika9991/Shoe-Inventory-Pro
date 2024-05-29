@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Customer Manager Form</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+    <link href="../bootstrap/css/b" rel="stylesheet">
+    <link href="../bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+</head>
+
+<body style="background-color:#2C3A47">
+
+<!--header/////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<main class="container-fluid" id="navigation">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid" style="background-color: #2C3A47">
+                <a class="navbar-brand" href="#" style="color: white">FOOTFLEX SHOES </a>
+                <!-- Button to toggle the offcanvas -->
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item" id="lnkHome"><a class="nav-link active" aria-current="page" href="#" style="color: white">Home</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="lnkProduct" href="#" style="color: white">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="lnkCustomer" href="#" style="color: white" >Customer</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="lnkEmployee" href="#" style="color: white" >Employee</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="lnkSupplier" href="#" style="color: white" >Supplier</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="lnkItem" href="#" style="color: white">Item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="lnkOrders" href="#" style="color: white">PlaceOrder</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="lnkOrderDetails" href="#" style="color: white">Order details</a>
+                        </li>
+
+                    </ul>
+                    <ul class="navbar-nav">
+                        <div id="admin-img-logOut" class="d-flex pe-3 ps-5">
+                            <img id="logOut" src="../bac/icons8-log-out-64.png" style=" width: 45px; height: 45px" height="64" width="64"/>
+                        </div>
+                        <div id="admin-img-div" class="d-flex pe-3 ps-5 " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <img id="headerImg" src="../bac/user.png"  style="border-radius: 1.4rem; width: 45px; height: 45px" alt="logo icon not found">
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+</main>
+
+<!-- Offcanvas container -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="background-color: #2C3A47">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel" style="color: white"></h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <h5 class="offcanvas-title" id="emailoffcanva" style="color: white; text-align: center;"></h5>
+
+        <div class="row mb-3 mt-3 ">
+            <label for="txtMaxPrice" class="form-label" style="color: white;">Old Password</label>
+            <input type="text" class="form-control" id="oldPassword" placeholder="" style="background-color: #283640;color: white">
+        </div>
+        <div class="row mb-3 mt-3 ">
+            <label for="btnProductPriceSearch" class="form-label" style="color: white;">New Password</label>
+            <input type="text" class="form-control" id="newPassword" placeholder="" style="background-color: #283640;color: white">
+        </div>
+        <div class="row mb-3 mt-3 ">
+            <label for="btnProductPriceSearch" class="form-label" style="color: white;">Confirm Password</label>
+            <input type="text" class="form-control" id="ConfirmPassword" placeholder="" style="background-color: #283640;color: white">
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-success" id="canvasSaveCustomer">Save</button>
+        </div>
+    </div>
+</div>
+
+<!-- dashboard   ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<main class="container-fluid" id="dashboardContent">
+    <div class="row">
+        <div class="col-md-6" data-aos="zoom-in-right" data-aos-duration="2000">
+            <img src="../bac/running-2423617_1280.png" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-6" style="background-image: url('assets/bac/military-boots-5780809_1280.png'); background-size: cover; background-position: center; width: 750px; height: 750px" >
+            <div class="content">
+                <h2 data-aos="fade-right" data-aos-duration="1200" data-aos-delay="700" class="text-white">FOOTFLEX</h2>
+                <h1 data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="900" class="text-white">Air Max <span class="text-white">2090</span></h1>
+                <hr class="fir-line" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1000" style="background-color: white;">
+                <hr class="sec-line" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="1100" style="background-color: white;">
+                <p data-aos="zoom-out" data-aos-duration="1200" data-aos-delay="1200" class="text-white mb-4 font-weight-bold" style="font-size: 18px;">
+                    Bring the past into the future with the FOOTFLEX Air Max 2090, a bold look inspired by the DNA of the iconic Air Max 90. Brand-new FOOTFLEX Air cushioning underfoot adds unparalleled comfort while transparent mesh and vibrantly colored details on the upper are blended with timeless OG features for an edgy, modernized look.
+                </p>
+                <div class="btn" data-aos="fade-right" data-aos-duration="1200" data-aos-delay="1300">
+                    <button class="btn btn-primary">Know More</button>
+                </div>
+
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4 border border-light p-3 d-flex flex-column align-items-center">
+                            <img src="../bac/ai-generated-8677786_1280.png" alt="" class="img-fluid" style="width: 150px; height: 150px;">
+                            <label class="text-white mt-3 text-center">Jordan Max 200</label>
+                        </div>
+                        <div class="col-md-4 border border-light p-3 d-flex flex-column align-items-center">
+                            <img src="../bac/ai-generated-8691762_640.png" alt="" class="img-fluid" style="width: 150px; height: 150px;">
+                            <label class="text-white mt-3 text-center">Jordan Air Zoom Super Rep</label>
+                        </div>
+                        <div class="col-md-4 border border-light p-3 d-flex flex-column align-items-center">
+                            <img src="../bac/shoes-153310_1280.png" alt="" class="img-fluid" style="width: 150px; height: 150px;">
+                            <label class="text-white mt-3 text-center">Jordan Max Super Rep</label>
+                        </div>
+                        <div class="col-md-4 border border-light p-3 d-flex flex-column align-items-center">
+                            <img src="../bac/tennis-7968714_1280.png" alt="" class="img-fluid" style="width: 150px; height: 150px;">
+                            <label class="text-white mt-3 text-center">Jordan Max Super Rep</label>
+                        </div>
+                        <div class="col-md-4 border border-light p-3 d-flex flex-column align-items-center">
+                            <img src="../bac/ai-generated-8677799_1280.png" alt="" class="img-fluid" style="width: 150px; height: 150px;">
+                            <label class="text-white mt-3 text-center">Jordan Max Super Rep</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- product main  ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+<main class="container-fluid" id="productContent">
+    <div class="container-fluid mt-2">
+        <div class="row border bg-r">
+            <div class="p-3 text-primary-emphasis border border-primary-subtle rounded-3" style="background-color: #2C3A47">
+                <!--Form--> <!--Slider-->
+                <div id="product-content" class="container-fluid py-4 rounded-4">
+                    <div class="d-flex justify-content-around flex-column align-items-center gap-5 flex-wrap-reverse">
+                        <!--input fields-->
+                        <div id="product-up-content" class="d-flex col-10 rounded-4 p-2 justify-content-center">
+                            <div class="row col-5 justify-content-center">
+                                <div class="row mb-3 mt-3 col-12">
+                                    <div class="col-sm-4">
+                                        <label for="txtMinPrice" class="form-label" style="color: white;">Min Price</label>
+                                        <input type="number" class="form-control" id="txtMinPrice" min="0" oninput="validity.valid||(value='');" style="background-color: #283640; color: white;">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <label for="txtMaxPrice" class="form-label" style="color: white;">Max Price</label>
+                                        <input type="number" class="form-control" id="txtMaxPrice" min="0" oninput="validity.valid||(value='');" style="background-color: #283640; color: white;">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="btnProductPriceSearch" class="form-label" style="color: white;">&nbsp;</label>
+                                        <button id="btnProductPriceSearch" type="button" class="btn btn-outline-primary ">Search</button>
+                                    </div>
+                                </div>
+                                <div class="row mb-3 col-12">
+                                    <div class="col-sm-8">
+                                        <label for="txtProductName" class="form-label" style="color: white;">Product Name</label>
+                                        <input type="text" class="form-control" id="txtProductName" style="background-color: #283640; color: white;">
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <label for="btnProductNameSearch" class="form-label" style="color: white;">&nbsp;</label>
+                                        <button id="btnProductNameSearch" type="button" class="btn btn-outline-primary ">Search</button>
+                                    </div>
+                                </div>
+                                <div class="row mb-3 col-12 pt-3 pb-3"></div>
+                            </div>
+                            <div class="row col-5 justify-content-center">
+                                <div class="col-sm-9 mb-3 mt-3">
+                                    <label for="cmbChooseByGender" class="form-label" style="color: white;">Choose by Gender</label>
+                                    <select id="cmbChooseByGender" class="form-select" aria-label="Default select example">
+                                        <option selected>Choose by Gender</option>
+                                        <option value="Mens">Men</option>
+                                        <option value="Women">Women</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-9 mb-3">
+                                    <label for="cmbChooseByOccasion" class="form-label" style="color: white;">Choose by Occasion</label>
+                                    <select id="cmbChooseByOccasion" class="form-select" aria-label="Default select example">
+                                        <option selected>Choose by Occasion</option>
+                                        <option value="Formal">Formal</option>
+                                        <option value="Casual">Casual</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-9 mb-3 d-flex justify-content-end">
+                                    <label for="btnProductClear" class="form-label" style="color: white;">&nbsp;</label>
+                                    <button id="btnProductClear" type="button" class="col-sm-3 btn btn-outline-warning">Clear</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--item grid-->
+                        <div id="product-grid" class="mb-5">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
+
+<!-- Customer main  ///////////////////////////////////////////////////////////////////////////////////////////// -->
+<main class="container-fluid" id="customerContent">
+    <div class="modal-footer mb-3" >
+        <nav style="width: 250px;" >
+            <div class="container-fluid " >
+                <form class="d-flex " role="search" >
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="background-color: #555e6a; color: white" id="employeeSearchInput">
+                    <button class="btn btn-outline-success " fdprocessedid="prr3r4" type="submit" id="SearchEmployee">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <!--Table-->
+    <div class="modal-footer mb-3" style=" position: relative;">
+        <table class="table table-bordered table-hover table-striped-columns">
+            <thead>
+            <tr class="table mt-5 p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Date of birth</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th style="display: none">city and state</th>
+                <th>Loyalty Date</th>
+                <th>Loyalty Level</th>
+                <th>Loyalty Points</th>
+                <th>Recent Purchase Date</th>
+                <th style="display: none">Address New</th>
+            </tr>
+            </thead>
+            <tbody id="customTbl">
+
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<!-- employee main  ///////////////////////////////////////////////////////////////////////////////////////////// -->
+<main class="container-fluid" id="employeeContent">
+    <div class="modal-footer mb-3" >
+        <nav style="width: 250px;" >
+            <div class="container-fluid " >
+                <form class="d-flex " role="search" >
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="background-color: #555e6a; color: white" id="searchInput">
+                    <button class="btn btn-outline-success " fdprocessedid="prr3r4" type="submit" id="SearchCustomer">Search</button>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <!--Table-->
+    <div class="modal-footer mb-3" style=" position: relative;">
+        <table class="table table-bordered table-hover table-striped-columns">
+            <thead>
+            <tr class="table mt-5 p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                <th>code</th>
+                <th>picture</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Dob</th>
+                <th>Gender</th>
+                <th>Join Date</th>
+                <th>Role</th>
+                <th>Civil Status</th>
+                <th>Designation</th>
+                <th>Address</th>
+                <th>Contact</th>
+                <th>Branch</th>
+                <th>Guardian Name</th>
+                <th>Guardian Contact</th>
+                <th style="display: none">address</th>
+                <th style="display: none">State</th>
+            </tr>
+            </thead>
+            <tbody id="employeeTbl">
+
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<!-- Supplier main  ///////////////////////////////////////////////////////////////////////////////////////////// -->
+<main class="container-fluid" id="supplierContent">
+    <section id="supplier-search-content" class="col-12 col-sm-8 my-2 align-items-center">
+        <section id="supplier-search">
+            <form class="row gx-3 gy-2 align-items-center">
+                <div class="col-sm-3">
+                    <label class="visually-hidden">Preference</label>
+                    <select class="form-select" id="cmbSupplierSearch">
+                        <option value="code">code</option>
+                        <option value="Name">Name</option>
+                    </select>
+                </div>
+                <div class="w-50 col-sm-3">
+                    <label class="visually-hidden" >Name</label>
+                    <input type="text" class="form-control" id="txtSupplierSearch" placeholder="Search Supplier">
+                </div>
+                <div class="col-auto">
+                    <button id="btnSupplierSearch" type="button" class="btn btn-outline-primary">Search</button>
+                </div>
+                <div class="col-auto">
+                    <button id="searchbtnSupplierClear" type="button" class="btn btn-outline-warning">Clear</button>
+                </div>
+            </form>
+        </section>
+    </section>
+    <!--Table-->
+
+    <div class="modal-footer mb-3" style=" position: relative;">
+        <table class="table table-bordered table-hover table-striped-columns">
+            <thead>
+            <tr class="table mt-5 p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                <th class="bg-primary-subtle">Code</th>
+                <th  class="bg-primary-subtle">Name</th>
+                <th  class="bg-primary-subtle">Email</th>
+                <th  class="bg-primary-subtle">Category</th>
+                <th class="bg-primary-subtle">Address</th>
+                <th  class="bg-primary-subtle">Mobile No.</th>
+                <th class="bg-primary-subtle">LandLine No.</th>
+            </tr>
+            </thead>
+            <tbody id="SupplierTbl">
+
+            </tbody>
+        </table>
+    </div>
+</main>
+
+
+<!-- Item main  ///////////////////////////////////////////////////////////////////////////////////////////// -->
+<main class="container-fluid" id="itemContent">
+    <section id="item-search-content" class="col-12 col-sm-8 my-2">
+        <section id="item-search">
+            <form class="row gx-3 gy-2 align-items-center">
+                <div class="col-sm-3">
+                    <label class="visually-hidden">Preference</label>
+                    <select class="form-select" id="cmbItemSearch">
+                        <option value="code">Code</option>
+                        <option value="name">Name</option>
+                    </select>
+                </div>
+                <div class="w-50 col-sm-3">
+                    <label class="visually-hidden">Name</label>
+                    <input type="text" class="form-control" id="txtItemSearch" placeholder="Search item">
+                </div>
+                <div class="col-auto">
+                    <button id="btnItemSearch" type="button" class="btn btn-outline-primary">Search</button>
+                </div>
+                <div class="col-auto">
+                    <button id="searchbtnItemClear" type="button" class="btn btn-outline-warning">Clear</button>
+                </div>
+            </form>
+        </section>
+    </section>
+
+    <!--Table-->
+    <div class="modal-footer mb-3" style="position: relative;">
+        <table class="table table-bordered table-hover table-striped-columns">
+            <thead>
+            <tr class="table mt-5 p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+
+                <th class="bg-primary-subtle">Code</th>
+                <th class="bg-primary-subtle">Item Pic</th>
+                <th class="bg-primary-subtle">Description</th>
+                <th class="bg-primary-subtle">Category</th>
+                <th class="bg-primary-subtle">Size-6</th>
+                <th class="bg-primary-subtle">Size-7</th>
+                <th class="bg-primary-subtle">Size-8</th>
+                <th class="bg-primary-subtle">Size-9</th>
+                <th class="bg-primary-subtle">Sale Price</th>
+                <th class="bg-primary-subtle">Buy Price</th>
+                <th class="bg-primary-subtle">Profit</th>
+                <th class="bg-primary-subtle">Profit Margin</th>
+                <th class="bg-primary-subtle">Status</th>
+                <th class="bg-primary-subtle">Supplier Code</th>
+                <th class="bg-primary-subtle">Supplier Name</th>
+            </tr>
+            </thead>
+            <tbody id="itemTbl">
+            <!-- Table body content -->
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<!-- Order main  ///////////////////////////////////////////////////////////////////////////////////////////// -->
+<main class="container-fluid" id="orderContent">
+    <div class="container-fluid mt-2" >
+        <div class="row border" >
+            <div class="col-12 col-md-4  mt-3 p-3 text-primary-emphasis  border border-primary-subtle rounded-3"
+                 style="border-radius: 10px; border: 2px solid #0BB256; background-color: #2C3A47">
+                <h4 style="text-align: center; color: #0BB256; ">Invoice Details</h4>
+                <div class="row g-2" style="color: white">
+                    <div class="col-12">
+                        <label class="form-label">Cashier Name :</label>
+                        <label class="form-label" id="lblCashierName">Dulaksha</label>
+                    </div>
+                    <div class="col-6">
+                        <label  class="form-label">Order Id :</label>
+                        <input disabled type="text" id="txtOrderId" class="form-control" aria-label="Last name"  style="background-color: #283640;color: white">
+                        <label  id="txtOrder" class="form-label" style="display: none;color: #0BB256"> :</label>
+                    </div>
+                    <div class="col-6">
+                        <label for="txtOrderDate" class="form-label">Order Date :</label>
+                        <input type="date" id="txtOrderDate" class="form-control"  aria-label="Order Date"  style="background-color: #283640;color: white">
+                    </div>
+
+
+                    <div class="col-6">
+                        <label for="cmbCustomerIds" class="form-label">Customer :</label>
+                        <select id="cmbCustomerIds" class="form-select"  style="background-color: #283640;color: white"></select>
+                    </div>
+
+                    <div class="col-6">
+                        <label for="lblCustomerName" class="form-label" >Customer Name :</label>
+                        <input disabled type="text" id="lblCustomerName" class="form-control"  aria-label="Last name"  style="background-color: #283640;color: white">
+                    </div>
+                </div>
+            </div>
+            <div
+                    class="col-12 col-md-4  mt-3 p-3 text-primary-emphasis  border border-primary-subtle rounded-3"
+                    style="border-radius: 10px; border: 2px solid #0BB256; background-color: #2C3A47">
+                <!--item section-->
+                <h4 style="text-align: center; color: #0BB256">Item Select</h4>
+                <div class="row g-2" style="color: white">
+                    <div class="col-4">
+                        <label for="cmbItemCodes" class="form-label">Item :</label>
+                        <select id="cmbItemCodes" class="form-select"  style="background-color: #283640;color: white"></select>
+                    </div>
+                    <div class="col-4">
+                        <label for="lblItemName" class="form-label">Item Name :</label>
+                        <input disabled type="text" id="lblItemName" class="form-control"  aria-label="Last name"  style="background-color: #283640;color: white">
+                    </div>
+                    <div class="col-4">
+                        <label for="lblItemUnitPrice" class="form-label">Price :</label>
+                        <input disabled type="text" id="lblItemUnitPrice" class="form-control"  aria-label="Last name"  style="background-color: #283640;color: white">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Item Size :</label>
+                        <select id="cmbItemSizes" class="form-select" aria-label="Default select example" disabled  style="background-color: #283640;color: white">
+                            <option selected></option>
+                            <option value="size_6">Size-6</option>
+                            <option value="size_7">Size-7</option>
+                            <option value="size_8">Size-8</option>
+                            <option value="size_9">Size-9</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label for="lblQtyOnHand" class="form-label">QtyOnHand :</label>
+                        <input disabled type="text" id="lblQtyOnHand" class="form-control" aria-label="Last name"  style="background-color: #283640;color: white">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">OrderQty :</label>
+                        <input type="text" id="txtOrderQty" class="form-control"  aria-label="Last name"  style="background-color: #283640;color: white">
+                        <div style="display: flex">
+                            <label id="qtymassage" class="form-label" style="font-size: 12px; color: red; display: none">Please enter amount lower than :</label>
+                            <label id="h1hello" style="position:relative;font-size: 12px; color: red; left:1%; display: none"> </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end">
+                    <button id="btnAddToCart" type="button" class="btn btn-warning mt-3  ">AddToCart</button>
+                </div>
+
+
+                <!-- Porch Section  ///////////////////////////////////////////////////////////////////////////////////////////// -->
+            </div>
+            <div
+                    class="col-12 col-md-4  mt-3 p-3 text-primary-emphasis  border border-primary-subtle rounded-3"
+                    style="border-radius: 10px; border: 2px solid #0BB256; background-color: #2C3A47">
+                <h2 style="color: blue">Total : RS <span id="lblTotal">0</span>/=</h2>
+                <h2 style=" color: red">SubTotal : RS <span id="lblSubTotal">0</span>/=</h2>
+                <div class="row g-2" style="color: white">
+                    <div class="col-6">
+                        <label for="txtCash" class="form-label">Cash :</label>
+                        <input type="text" id="txtCash" class="form-control" aria-label="First name"  style="background-color: #283640;color: white">
+                        <!--              <div style="display: flex">-->
+                        <!--                <label id="cashLOwMasse" class="form-label"  style="background-color: #283640;color: white; display: none">Please enter amount greater than :</label>-->
+                        <!--                <label id="cashShow"  style="background-color: #283640;color: white; display: none"> </label>-->
+                        <!--              </div>-->
+                    </div>
+                    <div class="col-6">
+                        <label for="txtDiscount" class="form-label">Discount :</label>
+                        <input type="number" id="txtDiscount" class="form-control" aria-label="Last name"  style="background-color: #283640;color: white">
+                    </div>
+                    <div class="col-6">
+                        <label class="form-label">Payment Method :</label>
+                        <select class="form-select" id="cmbPaymentMethod"  style="background-color: #283640;color: white">
+                            <option value="Cash">Cash</option>
+                            <option value="Card">Card</option>
+                        </select>
+                    </div>
+
+                    <div class="col-6">
+                        <label class="form-label">Add Points :</label>
+                        <input id="txtAddPoints" class="form-control" aria-label="Last name"  style="background-color: #283640;color: white">
+                    </div>
+
+                    <div class="col-12">
+                        <label for="lblBalance" class="form-label">Balance :</label>
+                        <input type="text" id="lblBalance" class="form-control" aria-label="Last name"  style="background-color: #283640;color: white">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button id="btnPlaceOrder" type="button" class="btn btn-success" style="width: 30%;">Purchase</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Table-->
+    <div class="modal-footer mb-3" style=" position: relative;">
+        <table class="table table-bordered table-hover table-striped-columns">
+            <thead>
+            <tr class="table mt-5 p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                <th >Item Code</th>
+                <th >Item Name</th>
+                <th >Size</th>
+                <th >Unit Price</th>
+                <th >Quantity</th>
+                <th >Total</th>
+            </tr>
+            </thead>
+            <tbody id="tbody-orderCart" class="table-group-divider">
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<!--Order Details Content///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<main class="container-fluid" id="OrderDetailsContent">
+    <div class="container-fluid mt-2">
+        <div class="row border bg-r">
+            <div class="p-3 text-primary-emphasis border border-primary-subtle rounded-3" style="background-color: #2C3A47">
+                <div class="d-flex justify-content-center">
+                    <form class="row gx-3 gy-2 align-items-center justify-content-center">
+                        <div class="col-sm-3">
+                            <label class="visually-hidden" for="cmbOrderSearch">Preference</label>
+                            <select class="form-select" id="cmbOrderSearch" style="background-color: #283640;color: white">
+                                <option value="OrderID">Order ID</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-4">
+                            <label class="visually-hidden" for="txtSearchOrder">Name</label>
+                            <input type="text" class="form-control" id="txtSearchOrder"  style="background-color: #283640;color: white">
+                        </div>
+                        <div class="col-auto">
+                            <button id="btnOrderSearch" type="button" class="btn btn-outline-primary">Search</button>
+                        </div>
+                        <div class="col-auto">
+                            <button id="btnOrderClear" type="button" class="btn btn-outline-warning">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Table-->
+    <div class="modal-footer mb-3" style="position: relative;">
+        <table class="table table-bordered table-hover table-striped-columns">
+            <thead>
+            <tr class="table mt-5 p-3 text-primary-emphasis bg-primary-subtle border border-primary-subtle rounded-3">
+                <th class="bg-primary-subtle">Order Id</th>
+                <th class="bg-primary-subtle">Cashier Name</th>
+                <th class="bg-primary-subtle">Customer Name</th>
+                <th class="bg-primary-subtle">Order Date and Time</th>
+                <th class="bg-primary-subtle">Added Points</th>
+                <th class="bg-primary-subtle">Total</th>
+                <th class="bg-primary-subtle"></th>
+            </tr>
+            </thead>
+            <tbody id="tbody-refund-orders" class="table-group-divider">
+
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="../../controller/AdminDashboardController.js"></script>
+
+<script src="../../controller/UpdateUser.js"></script>
+
+<!--  <script src="db/db.js"></script>-->
+<!--  <script src="models/Customer.js"></script>-->
+<script src="../../controller/CustomerController.js"></script>
+<script src="../../controller/validations/CustomerValidations.js"></script>
+
+<script src="../../controller/EmployeController.js"></script>
+<script src="../../controller/validations/EmployeeValidation.js"></script>
+
+<script src="../../controller/SupplierController.js"></script>
+<script src="../../controller/validations/SupplierValidation.js"></script>
+
+<script src="../../controller/ItemController.js"></script>
+<script src="../../controller/validations/ItemValidations.js"></script>
+
+<script src="../../controller/OrderController.js"></script>
+<script src="../../controller/validations/OrderValidations.js"></script>
+
+<script src="../../controller/OrderDetailsController.js"></script>
+
+
+<script src="../../controller/ProductController.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!--  <script src="models/Item.js"></script>-->
+<!--  <script src="controller/ItemController.js"></script>-->
+<!--  <script src="controller/validations/ItemValidations.js"></script>-->
+
+<!--  <script src="models/Order.js"></script>-->
+
+
+<!--  <script src="controller/OrderDetailsController.js"></script>-->
+
+<!--  <script src="models/OrderDetails.js"></script>-->
+
+</body>
+</html>

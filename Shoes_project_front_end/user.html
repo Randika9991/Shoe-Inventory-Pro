@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootstrap Customer Manager Form</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css">
+    <link href="assets/bootstrap/css/b" rel="stylesheet">
+    <link href="assets/bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body style="background-color:#2C3A47">
+<!--  singup & login page ///////////////////////////////////////////////////////////////////////////////////////////// -->
+<main id="loginPage" style="background-color: #2C3A47;color: #ffffff;display: none">
+    <div class="container">
+        <div class="row justify-content-center mt-5" style="background-color: #2C3A47; color: #ffffff;">
+            <div class="col-md-6">
+                <div class="card" style="background-color: #2C3A47;color: #ffffff; border-color: #fdfdfd;">
+                    <div class="card-header d-flex justify-content-between align-items-center" style="color: #ffffff;">
+                        Login
+                        <button type="button" class="btn-close" aria-label="Close" id="loginClose" style="background-color: #ffffff;"></button>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="txtLogInEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="txtLogInEmail" aria-describedby="emailHelp" style="background-color: #283640;color: white">
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtLogInPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="txtLogInPassword" style="background-color: #283640;color: white">
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="loginSubmit">Login</button>
+                            <div class="d-flex justify-content-center gap-2 my-3">
+                                <p class=" m-0" style="font-size: 16px">Don't have an account?</p>
+                                <p class="d-flex align-items-center m-0"><a id="link-sign-up" class="link-opacity-100-hover" href="#" style="font-size: 16px">sign up</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<main class="container-fluid" id="signUpPage" style="background-color: #2C3A47;display: none">
+    <div class="container">
+        <div class="row justify-content-center mt-5" style="background-color: #2C3A47;">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #2C3A47; color: white">
+                        Signup
+                        <button type="button" class="btn-close" aria-label="Close" id="signUpClose" style="background-color: #ffffff;"></button>
+                    </div>
+                    <div class="card-body" style="background-color: #2C3A47; color: white">
+                        <form class="needs-validation" novalidate>
+                            <div class="row mb-3">
+                                <div class="col-6">
+                                    <label class="form-label">First Name</label>
+                                    <input type="text" class="form-control" id="txtSignUpFirstName" style="background-color: #283640;color: white" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" id="txtSignUpLastName" style="background-color: #283640;color: white" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtSignUpEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="txtSignUpEmail" aria-describedby="emailHelp" style="background-color: #283640;color: white" required>
+                                <div class="invalid-feedback">
+                                    Please enter a valid email address.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtSignUpPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="txtSignUpPassword" style="background-color: #283640;color: white" required>
+                                <div class="invalid-feedback">
+                                    Please enter a password.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtSignUpConfirmPassword" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="txtSignUpConfirmPassword" style="background-color: #283640;color: white" required>
+                                <div class="invalid-feedback">
+                                    Please confirm your password.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cmbSignUpRole" class="form-label">Role</label>
+                                <select class="form-select" id="cmbSignUpRole" style="background-color: #283640;color: white" required>
+                                    <option value="user">User</option>
+                                    <option value="admin">Admin</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select a role.
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="SignupSubmit" style="background-color: #4cafac; border: none; color: white; padding: 10px 27px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer; border-radius: 12px;">Signup</button>
+                            <div class="d-flex justify-content-center gap-2 my-3">
+                                <p class="m-0" style="font-size: 16px">Already have an account?</p>
+                                <p class="d-flex align-items-center m-0"><a id="link-log-in" class="link-opacity-100-hover" href="#" style="font-size: 16px">Log in</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="controller/LoginAndSignUpController.js"></script>
+
+<script src="controller/signup.js"></script>
+<script src="controller/validations/SignUpVallidation.js"></script>
+
+<script src="controller/LoginController.js"></script>
+<script src="controller/validations/LogInValidation.js"></script>
+
+</body>
+</html>

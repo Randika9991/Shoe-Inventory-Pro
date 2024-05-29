@@ -1,4 +1,5 @@
-package lk.ijse.gdse66.footflex.demo.repository;/*
+package lk.ijse.gdse66.footflex.demo.repository;
+/*
     this application is copyright protected
     Author : kumara
     Date : 4/30/2024
@@ -23,4 +24,7 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
     /*custom JPQL query*/
     @Query("SELECT c.code FROM Customer c")
     List<String> findAllCustomerCodes();
+
+    boolean existsById(String code);
+    void deleteById(String code);
 }
