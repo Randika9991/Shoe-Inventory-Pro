@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.footflex.demo.service;/*
+package lk.ijse.gdse66.footflex.demo.service.impl;/*
     this application is copyright protected
     Author : kumara
     Date : 5/7/2024
@@ -9,6 +9,7 @@ import lk.ijse.gdse66.footflex.demo.dto.SupplierDTO;
 import lk.ijse.gdse66.footflex.demo.entity.Inventory;
 import lk.ijse.gdse66.footflex.demo.repository.InventoryRepo;
 import lk.ijse.gdse66.footflex.demo.repository.SupplierRepo;
+import lk.ijse.gdse66.footflex.demo.service.InventoryService;
 import lk.ijse.gdse66.footflex.demo.service.exception.DuplicateRecordException;
 import lk.ijse.gdse66.footflex.demo.service.exception.NotFoundException;
 import org.modelmapper.ModelMapper;

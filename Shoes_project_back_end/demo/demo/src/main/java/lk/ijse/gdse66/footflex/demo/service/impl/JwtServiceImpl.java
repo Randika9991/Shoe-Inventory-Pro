@@ -1,5 +1,6 @@
-package lk.ijse.gdse66.footflex.demo.service;
+package lk.ijse.gdse66.footflex.demo.service.impl;
 
+import lk.ijse.gdse66.footflex.demo.service.JwtService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 

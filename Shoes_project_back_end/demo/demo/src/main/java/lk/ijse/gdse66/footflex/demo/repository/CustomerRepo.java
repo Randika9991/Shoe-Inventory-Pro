@@ -27,4 +27,7 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
 
     boolean existsById(String code);
     void deleteById(String code);
+
+    @Query(value = "SELECT * FROM customer WHERE DAY(dob) = DAY(CURDATE()) AND MONTH(dob) = MONTH(CURDATE())", nativeQuery = true)
+    List<Customer> findCustomersByBirthdayToday();
 }

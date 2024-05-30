@@ -17,11 +17,11 @@ $("#loginSubmit").click(function () {
             data: jsonObj,
             contentType: "application/json",
             success:function (resp, textStatus, jqxhr) {
-
+                localStorage.setItem("password",password);
                 localStorage.setItem("token", resp.token)
                 switchToAnotherPageFromLogin(resp);
                 clearLogInInputFields();
-
+                senmail()
             },
             error: function (xhr, textStatus, error) {
                 console.log("logIn error: ", error);
@@ -68,3 +68,23 @@ function clearLogInInputFields() {
     txtLogEmail.val("");
     txtLogPassword.val("");
 }
+
+
+function senmail() {
+    $.ajax({
+        url: "http://localhost:8080/api/v1/customer/sendWishes",
+        type: 'GET',
+        headers: {
+            "Authorization": "Bearer " + localStorage.getItem("token")
+        },
+        success: function(response) {
+            const customers = response;
+            console.log(customers);
+        },
+        error: function(xhr, status, error) {
+            console.error('An error occurred:', error);
+        }
+    });
+}
+
+

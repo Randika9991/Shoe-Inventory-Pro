@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.footflex.demo.service;/*
+package lk.ijse.gdse66.footflex.demo.service.impl;/*
     this application is copyright protected
     Author : kumara
     Date : 5/22/2024
@@ -11,6 +11,7 @@ import lk.ijse.gdse66.footflex.demo.entity.Inventory;
 import lk.ijse.gdse66.footflex.demo.entity.User;
 import lk.ijse.gdse66.footflex.demo.repository.EmployeeRepo;
 import lk.ijse.gdse66.footflex.demo.repository.UserRepo;
+import lk.ijse.gdse66.footflex.demo.service.UserService;
 import lk.ijse.gdse66.footflex.demo.service.exception.DuplicateRecordException;
 import lk.ijse.gdse66.footflex.demo.service.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -57,6 +58,15 @@ public class UserServiceImpl implements UserService {
         }
         System.out.println("userServiceUpdate");
         return mapper.map(userRepo.save(mapper.map(userDTO, User.class)), UserDTO.class);
+    }
+
+    @Override
+    public boolean deleteUser(String id) {
+        if (!employeeRepo.existsById(id)) {
+            return false;
+        }
+        employeeRepo.deleteById(id);
+        return !employeeRepo.existsById(id);
     }
 }
 

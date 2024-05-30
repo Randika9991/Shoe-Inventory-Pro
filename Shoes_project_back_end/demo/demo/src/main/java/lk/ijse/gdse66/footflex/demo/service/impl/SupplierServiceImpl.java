@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.footflex.demo.service;/*
+package lk.ijse.gdse66.footflex.demo.service.impl;/*
     this application is copyright protected
     Author : kumara
     Date : 5/6/2024
@@ -7,6 +7,7 @@ package lk.ijse.gdse66.footflex.demo.service;/*
 import lk.ijse.gdse66.footflex.demo.dto.SupplierDTO;
 import lk.ijse.gdse66.footflex.demo.entity.Supplier;
 import lk.ijse.gdse66.footflex.demo.repository.SupplierRepo;
+import lk.ijse.gdse66.footflex.demo.service.SupplierService;
 import lk.ijse.gdse66.footflex.demo.service.exception.DuplicateRecordException;
 import lk.ijse.gdse66.footflex.demo.service.exception.NotFoundException;
 import org.modelmapper.ModelMapper;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class SupplierServiceImpl implements SupplierService{
+public class SupplierServiceImpl implements SupplierService {
     @Autowired
     private SupplierRepo supplierRepo;
 

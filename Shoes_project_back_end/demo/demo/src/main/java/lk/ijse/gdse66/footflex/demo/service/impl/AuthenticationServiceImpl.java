@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.footflex.demo.service;/*
+package lk.ijse.gdse66.footflex.demo.service.impl;/*
     this application is copyright protected
     Author : kumara
     Date : 5/22/2024
@@ -11,6 +11,8 @@ import lk.ijse.gdse66.footflex.demo.dto.UserDTO;
 import lk.ijse.gdse66.footflex.demo.entity.User;
 import lk.ijse.gdse66.footflex.demo.repository.EmployeeRepo;
 import lk.ijse.gdse66.footflex.demo.repository.UserRepo;
+import lk.ijse.gdse66.footflex.demo.service.AuthenticationService;
+import lk.ijse.gdse66.footflex.demo.service.JwtService;
 import lk.ijse.gdse66.footflex.demo.service.exception.DuplicateRecordException;
 import lk.ijse.gdse66.footflex.demo.service.exception.IncorrectPasswordException;
 import lk.ijse.gdse66.footflex.demo.service.exception.NotFoundException;

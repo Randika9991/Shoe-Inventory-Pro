@@ -34,7 +34,6 @@ public class CustomerController {
     @PostMapping("/save")
     public CustomerDTO save(@RequestBody CustomerDTO customerDTO){
         System.out.println(customerDTO);
-//        customerDTO.setCode(customerService.generateNextId());
         return customerService.saveCustomer(customerDTO);
     }
 
@@ -64,6 +63,9 @@ public class CustomerController {
         }
     }
 
-
+    @GetMapping("/sendWishes")
+    public List<String> sendWishes(){
+        return customerService.sendWishes();
+    }
 
 }

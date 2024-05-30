@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.footflex.demo.service;/*
+package lk.ijse.gdse66.footflex.demo.service.impl;/*
     this application is copyright protected
     Author : kumara
     Date : 4/30/2024
@@ -7,16 +7,20 @@ package lk.ijse.gdse66.footflex.demo.service;/*
 import lk.ijse.gdse66.footflex.demo.dto.CustomerDTO;
 import lk.ijse.gdse66.footflex.demo.entity.Customer;
 import lk.ijse.gdse66.footflex.demo.repository.CustomerRepo;
+import lk.ijse.gdse66.footflex.demo.service.CustomerService;
 import lk.ijse.gdse66.footflex.demo.service.exception.DuplicateRecordException;
 import lk.ijse.gdse66.footflex.demo.service.exception.NotFoundException;
+import lk.ijse.gdse66.footflex.demo.service.util.EmailUtil;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.mail.MessagingException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class CustomerServiceImpl implements CustomerService{
+public class CustomerServiceImpl implements CustomerService {
     @Autowired
     private CustomerRepo customerRepo;
 
@@ -88,5 +92,26 @@ public class CustomerServiceImpl implements CustomerService{
         id = prefix + String.format("%03d", nextNumericPart);
 
         return id;
+    }
+
+    @Override
+    public List<String> sendWishes() {
+        List<String> custStringList = new ArrayList<>();
+
+        List<Customer> customersByBirthdayToday = customerRepo.findCustomersByBirthdayToday();
+        customersByBirthdayToday.forEach(customer -> {
+            try {
+                EmailUtil.sendEmail(customer.getEmail(), "Happy Birthday!", "Happy Birthday " + customer.getName() + "!");
+            } catch (MessagingException e) {
+                throw new RuntimeException(e);
+            }finally {
+                String custCode = customer.getCode();
+                String name = customer.getName();
+                String together = custCode + " - " + name;
+                custStringList.add(together);
+
+            }
+        });
+        return custStringList;
     }
 }

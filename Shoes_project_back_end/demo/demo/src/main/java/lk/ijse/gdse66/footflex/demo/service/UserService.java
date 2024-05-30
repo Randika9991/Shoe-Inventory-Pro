@@ -13,4 +13,5 @@ public interface UserService {
     void Save(UserDTO userDTO);
     UserDTO searchByEmail(String email);
     UserDTO updateUser(UserDTO userDTO);
+    boolean deleteUser(String id);
 }
